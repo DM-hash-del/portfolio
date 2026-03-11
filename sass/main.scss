@@ -1,15 +1,21 @@
-// base
-@use "reset";
-@use "typography";
-// abstracts
-@use "tokens";
-@use "functions";
-@use "mixins";
-// componenets
-@use "cards";
-@use "link-buttons";
-// layout
-@use "grid";
-@use "menu";
-// pages
-@use "landing-page";
+// // base
+// @use "base/reset";
+// @use "base/typography";
+// // abstracts
+// @use "abstracts/tokens";
+// @use "abstracts/functions";
+// @use "abstracts/mixins";
+// // components
+// @use "components/cards";
+// @use "components/link-buttons";
+// // layout
+// @use "layout/grid";
+// @use "layout/menu";
+// // pages
+// @use "pages/landing-page";
+
+@use "abstracts";
+@use "base";
+@use "layout";
+@use "components";
+@use "pages";
