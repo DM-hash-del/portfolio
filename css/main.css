@@ -8,4 +8,21 @@
 
 html {
   font-size: 100%;
+}
+
+body {
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url(../../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf) format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url(../../assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf) format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
 }/*# sourceMappingURL=main.css.map */
