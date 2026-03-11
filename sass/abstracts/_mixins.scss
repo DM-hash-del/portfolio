@@ -1,0 +1,8 @@
+// @use "../abstracts" as v;
+@use "sass:map";
+
+@mixin respond($breakpoint) {
+  @media (min-width: map.get(v.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}

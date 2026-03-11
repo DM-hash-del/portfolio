@@ -8,21 +8,41 @@
 
 html {
   font-size: 100%;
+  scroll-snap-type: y proximity;
 }
 
 body {
   font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #111;
+  scroll-behavior: smooth;
 }
 
 @font-face {
   font-family: "Noto Sans";
-  src: url(../../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf) format("truetype");
+  src: url(../assets/fonts/NotoSans-VariableFont_wdth,wght.ttf) format("truetype");
   font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Noto Sans";
-  src: url(../../assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf) format("truetype");
+  src: url(../assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf) format("truetype");
   font-weight: 100 900;
   font-style: italic;
+  font-display: swap;
+}
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #511699;
+}
+
+.page {
+  margin-left: 250px;
+  background-color: #f2f2f2;
+  height: 100vh;
 }/*# sourceMappingURL=main.css.map */

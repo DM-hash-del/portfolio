@@ -6,3 +6,25 @@ $breakpoints: (
   "l": 992px,
   "xl": 1200px,
 );
+
+$font-primary: "Noto Sans", Arial, Helvetica, sans-serif;
+$weight-thin: 100;
+$weight-regular: 400;
+$weight-bold: 600;
+$weight-thick: 900;
+
+$colors: (
+  font-light: #f2f2f2,
+  font-dark: #111,
+  primary: #b2f264,
+  primary-dark: #6cb01a,
+  primary-light: #d7f4b4,
+  complimentary: #964cf0,
+  complimentary-light: #b27ff0,
+  complimentary-dark: #511699,
+);
+
+// Because of the static sidebar the rest of the page needs to be pushed over
+// maybe this can be a calculated adjustment or fixed
+// ! Values should range in accordance to the breakpoints xs > s > m > l > xl
+$sidebar-adjustments: (50px, 150px, 250px);

@@ -1,3 +1,5 @@
+@use "../abstracts" as ab;
+
 *,
 *::before,
 *::after {
@@ -8,8 +10,15 @@
 
 html {
   font-size: 100%;
+
+  // sets an auto scroll behavior
+  // needs to be on the element that's actually scrolling
+  scroll-snap-type: y proximity;
 }
 
 body {
-  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+  font-family: ab.$font-primary;
+  font-weight: ab.$weight-regular;
+  color: ab.color(font-dark);
+  scroll-behavior: smooth;
 }

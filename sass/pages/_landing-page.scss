@@ -1,0 +1,8 @@
+@use "../abstracts" as ab;
+@use "sass:list";
+
+.page {
+  margin-left: list.nth(ab.$sidebar-adjustments, 3);
+  background-color: ab.color(font-light);
+  height: 100vh;
+}
