@@ -1,12 +1,29 @@
 @use "../abstracts" as ab;
 
 .side-bar {
+  // ! temp
+  border: 1px solid red;
+
   position: fixed;
   top: 0;
   left: 0;
-  width: 250px;
+  width: ab.sidebar-width(1);
   height: 100vh;
+  background-color: ab.color(font-light);
+  
+  @include ab.respond(s) {
+    width: ab.sidebar-width(2);
+  }
 
-  // temp
-  background-color: ab.color(complimentary-dark);
+  @include ab.respond(m) {
+    width: ab.sidebar-width(3);
+  }
+
+  @include ab.respond(l) {
+    width: ab.sidebar-width(4);
+  }
+
+  @include ab.respond(xl) {
+    width: ab.sidebar-width(5);
+  }
 }

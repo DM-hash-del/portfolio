@@ -1,11 +1,15 @@
 // BreakPoints
 $breakpoints: (
-  "xs": 280px,
+  // "xs": 280px,
   "s": 576px,
   "m": 768px,
   "l": 992px,
   "xl": 1200px,
 );
+// Because of the static sidebar the rest of the page needs to be pushed over
+// maybe this can be a calculated adjustment or fixed
+// ! Values should range in accordance to the breakpoints xs > s > m > l > xl
+$sidebar-adjustments: (46px, 100px, 120px, 150px, 200px);
 
 $font-primary: "Noto Sans", Arial, Helvetica, sans-serif;
 $weight-thin: 100;
@@ -24,7 +28,13 @@ $colors: (
   complimentary-dark: #511699,
 );
 
-// Because of the static sidebar the rest of the page needs to be pushed over
-// maybe this can be a calculated adjustment or fixed
-// ! Values should range in accordance to the breakpoints xs > s > m > l > xl
-$sidebar-adjustments: (50px, 150px, 250px);
+$icons: (
+  mail: '\e945',
+  arrow-up: '\ea3a',
+  arrow-right: '\ea3c',
+  arrow-left: '\ea40',
+  arrow-down: '\ea3e',
+  circle-left: '\ea44',
+  github: '\eab0',
+  linkedin: '\eac9',
+)

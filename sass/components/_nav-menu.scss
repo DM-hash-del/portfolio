@@ -1,0 +1,63 @@
+@use "../abstracts" as ab;
+
+.nav-menu {
+  display: none;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  &__item {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &__link {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__social-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__social-item {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &__social-link {
+    border: 1px solid red;
+  }
+
+  &__social-icon {
+    &--github {
+      @include ab.icon(github, before) {
+        font-size: 1.2rem;
+      }
+    }
+    &--linkedin {
+      @include ab.icon(linkedin, before) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @include ab.respond(s) {
+    display: block;
+  }
+  @include ab.respond(s) {
+
+  }
+  @include ab.respond(s) {
+
+  }
+  @include ab.respond(s) {
+
+  }
+}

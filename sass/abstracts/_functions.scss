@@ -1,6 +1,15 @@
-@use "tokens" as ab;
+@use "tokens" as v;
 @use "sass:map";
+@use "sass:list";
 
 @function color($name) {
-  @return map.get(ab.$colors, $name);
+  @return map.get(v.$colors, $name);
+}
+
+@function sidebar-width($index) {
+  @return list.nth(v.$sidebar-adjustments, $index);
+}
+
+@function breakpoint($value) {
+  @return map.get($breakpoints, $value);
 }

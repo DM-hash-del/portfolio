@@ -1,0 +1,18 @@
+@use "../abstracts" as ab;
+
+.container {
+  // set page widths for content to keep from edges etc
+  border: 1px solid red;
+  @include ab.respond(s) {
+    width: 550px;
+  }
+  @include ab.respond(m) {
+    width: 740px;
+  }
+  @include ab.respond(l) {
+    width: 970px;
+  }
+  @include ab.respond(xl) {
+    width: 1200px;
+  }
+}

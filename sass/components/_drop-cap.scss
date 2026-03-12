@@ -1,0 +1,17 @@
+@use "../abstracts" as ab;
+
+.drop-cap {
+  display: none;
+  width: fit-content;
+  margin: 0 auto;
+  
+  &__text {
+    display: inline-block;
+    font-size: 4rem;
+    text-transform: uppercase;
+  }
+
+  @include ab.respond(s) {
+    display: block;
+  }
+}

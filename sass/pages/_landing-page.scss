@@ -2,7 +2,23 @@
 @use "sass:list";
 
 .page {
-  margin-left: list.nth(ab.$sidebar-adjustments, 3);
   background-color: ab.color(font-light);
+  margin-left: ab.sidebar-width(1);
   height: 100vh;
+
+  @include ab.respond(s) {
+    margin-left: ab.sidebar-width(2);
+  }
+
+  @include ab.respond(m) {
+    margin-left: ab.sidebar-width(3);
+  }
+
+  @include ab.respond(l) {
+    margin-left: ab.sidebar-width(4);
+  }
+
+  @include ab.respond(xl) {
+    margin-left: ab.sidebar-width(5);
+  }
 }
