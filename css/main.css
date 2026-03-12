@@ -101,7 +101,9 @@ video {
 }
 .drop-cap__text {
   display: inline-block;
+  color: #6cb01a;
   font-size: 4rem;
+  font-weight: 800;
   text-transform: uppercase;
 }
 @media (min-width: 576px) {
@@ -129,25 +131,32 @@ video {
 }
 .nav-menu__social-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 .nav-menu__social-item {
-  width: fit-content;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 .nav-menu__social-link {
-  border: 1px solid red;
+  display: inline-block;
+}
+.nav-menu__social-icon {
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  color: #6cb01a;
+  border-radius: 50%;
+  line-height: 1;
 }
 .nav-menu__social-icon--github::before {
   content: "\eab0";
   font-family: "icomoon" !important;
-  font-size: 1.2rem;
+  font-size: 3.25rem;
 }
 .nav-menu__social-icon--linkedin::before {
   content: "\eac9";
   font-family: "icomoon" !important;
-  font-size: 1.2rem;
+  font-size: 3.25rem;
 }
 @media (min-width: 576px) {
   .nav-menu {

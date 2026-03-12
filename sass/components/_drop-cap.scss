@@ -7,7 +7,9 @@
   
   &__text {
     display: inline-block;
+    color: ab.color(primary-dark);
     font-size: 4rem;
+    font-weight: 800;
     text-transform: uppercase;
   }
 

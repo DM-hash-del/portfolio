@@ -22,28 +22,33 @@
 
   &__social-list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
   }
 
   &__social-item {
-    width: fit-content;
-    margin: 0 auto;
+    margin: 10px auto;
   }
 
   &__social-link {
-    border: 1px solid red;
+    display: inline-block;
   }
 
   &__social-icon {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    color: ab.color(primary-dark);
+    border-radius: 50%;
+    line-height: 1;
     &--github {
       @include ab.icon(github, before) {
-        font-size: 1.2rem;
+        font-size: 3.25rem;
       }
     }
     &--linkedin {
       @include ab.icon(linkedin, before) {
-        font-size: 1.2rem;
+        font-size: 3.25rem;
       }
     }
   }
@@ -51,13 +56,13 @@
   @include ab.respond(s) {
     display: block;
   }
-  @include ab.respond(s) {
+  @include ab.respond(m) {
 
   }
-  @include ab.respond(s) {
+  @include ab.respond(l) {
 
   }
-  @include ab.respond(s) {
+  @include ab.respond(xl) {
 
   }
 }
