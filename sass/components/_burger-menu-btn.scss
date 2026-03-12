@@ -2,9 +2,9 @@
 
 .burger-container {
   // ! temp
-  height: calc(ab.sidebar-width(1) - 5px);
+  height: calc(ab.sidebar-width(1) - 4px);
 
-  width: calc(ab.sidebar-width(1) - 5px);
+  width: calc(ab.sidebar-width(1) - 4px);
   background-color: ab.color(primary-light);
   margin: 0 auto;
   margin-top: 10px;

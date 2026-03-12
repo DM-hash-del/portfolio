@@ -20,5 +20,42 @@ body {
   font-family: ab.$font-primary;
   font-weight: ab.$weight-regular;
   color: ab.color(font-dark);
-  scroll-behavior: smooth;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; // macOS specific
+}
+
+ul, ol {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
 }

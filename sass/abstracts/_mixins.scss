@@ -12,16 +12,6 @@
 
 }
 
-// ! DEPRICATED: USE MIXIN INSTEAD
-// @each $icon, $value in v.$icons { 
-//   .icb--#{$icon}::before {
-//     content: $value;
-//   }
-//   .ica--#{$icon}::after {
-//     content: $value;
-//   }
-// }
-
 @mixin icon($name, $pos: before) {
   &::#{$pos} {
     content: map.get(v.$icons, $name);
