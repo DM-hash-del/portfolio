@@ -2,17 +2,21 @@
 
 .side-bar {
   // ! temp
-  border: 1px solid red;
+  // border: 1px solid red;
 
   position: fixed;
   top: 0;
   left: 0;
   width: ab.sidebar-width(1);
-  height: 100vh;
   background-color: ab.color(font-light);
+  border-radius: 0 5px 5px 0;
+  margin-top: 30px;
+  z-index: 1000;
   
   @include ab.respond(s) {
     width: ab.sidebar-width(2);
+    height: 100vh;
+    padding: 0 10px;
   }
 
   @include ab.respond(m) {
@@ -24,6 +28,10 @@
   }
 
   @include ab.respond(xl) {
-    width: ab.sidebar-width(5);
+    // width: ab.sidebar-width(5);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
   }
 }

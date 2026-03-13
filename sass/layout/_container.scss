@@ -2,17 +2,19 @@
 
 .container {
   // set page widths for content to keep from edges etc
-  border: 1px solid red;
-  @include ab.respond(s) {
-    width: 550px;
-  }
-  @include ab.respond(m) {
-    width: 740px;
-  }
-  @include ab.respond(l) {
-    width: 970px;
-  }
-  @include ab.respond(xl) {
-    width: 1200px;
-  }
+  // border: 2px solid skyblue;
+  margin: 0 auto;
+  max-width: 1160px;
+  // @include ab.respond(s) {
+  //   max-width: 510px;
+  // }
+  // @include ab.respond(m) {
+  //   max-width: 710px;
+  // }
+  // @include ab.respond(l) {
+  //   max-width: 940px;
+  // }
+  // @include ab.respond(xl) {
+    
+  // }
 }

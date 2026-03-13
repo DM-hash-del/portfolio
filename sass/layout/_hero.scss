@@ -1,0 +1,44 @@
+@use "../abstracts" as ab;
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(0deg, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 9%, rgba(17, 17, 17, 0.48) 35%, rgba(17, 17, 17, 0) 100%), url(../assets/images/hero_2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: 230px;
+
+    color: ab.color(font-light);
+  }
+
+  &__title {
+    text-align: center;
+    text-wrap: balance;
+    padding: 0 15px;
+  }
+  &__excerpt {
+    margin-top: 10px;
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 30px;
+    left: calc(50% - 44px);
+    margin: 0 auto;
+    color: ab.color(font-light);
+    @include ab.icon(circle-left, after) {
+      display: inline-block;
+      position: absolute;
+      transform: rotate(-90deg);
+      right: 36px;
+      top: 20px;
+    }
+  }
+}

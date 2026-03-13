@@ -3,22 +3,25 @@
 
 .page {
   background-color: ab.color(font-light);
-  margin-left: ab.sidebar-width(1);
-  height: 100vh;
+  // padding-left: ab.sidebar-width(1);
+  // width: calc(100% - #{ab.sidebar-width(1)});
+  min-height: 100vh;
 
   @include ab.respond(s) {
-    margin-left: ab.sidebar-width(2);
+    padding-left: ab.sidebar-width(2);
   }
 
   @include ab.respond(m) {
-    margin-left: ab.sidebar-width(3);
+    padding-left: ab.sidebar-width(3);
   }
 
   @include ab.respond(l) {
-    margin-left: ab.sidebar-width(4);
+    padding-left: ab.sidebar-width(4);
   }
 
   @include ab.respond(xl) {
-    margin-left: ab.sidebar-width(5);
+    // ! don't need this unless you keep the sidebar on the side !
+    padding-top: ab.sidebar-width(5);
+    padding-left: 0;
   }
 }

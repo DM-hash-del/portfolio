@@ -9,7 +9,30 @@
 }
 
 @mixin burger-graphic {
-
+  position: relative;
+  height: 8px;
+  width: calc(fn.sidebar-width(1) - 4px);
+  background-color: fn.color(font-dark);
+  border-radius: 0 5px 5px 0;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: calc(fn.sidebar-width(1) - 4px);
+    background-color: fn.color(font-dark);
+    border-radius: 0 5px 5px 0;
+    top: -12px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: calc(fn.sidebar-width(1) - 4px);
+    background-color: fn.color(font-dark);
+    border-radius: 0 5px 5px 0;
+    top: 12px;
+  }
+  @content;
 }
 
 @mixin icon($name, $pos: before) {
@@ -18,4 +41,11 @@
     font-family: 'icomoon' !important;
     @content;
   }
+}
+
+@mixin project-card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @content;
 }
