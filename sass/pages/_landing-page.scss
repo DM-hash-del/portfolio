@@ -1,6 +1,8 @@
 @use "../abstracts" as ab;
 @use "sass:list";
 
+// ! page specific styles
+
 .page {
   background-color: ab.color(font-light);
   // padding-left: ab.sidebar-width(1);

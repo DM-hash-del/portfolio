@@ -384,6 +384,30 @@ video {
   top: 20px;
 }
 
+.contact {
+  border: 1px solid greenyellow;
+  position: relative;
+  padding-bottom: 80px;
+}
+.contact__container {
+  border: 2px dashed red;
+}
+.contact__scroll {
+  position: absolute;
+  bottom: 20px;
+  left: 40%;
+}
+.contact__scroll::after {
+  content: "\ea44";
+  font-family: "icomoon" !important;
+  display: inline-block;
+  position: absolute;
+  transform: rotate(90deg);
+  left: 25px;
+  top: -23px;
+  color: inherit;
+}
+
 .page {
   background-color: #f2f2f2;
   min-height: 100vh;
