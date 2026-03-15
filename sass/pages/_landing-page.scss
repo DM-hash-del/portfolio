@@ -11,6 +11,9 @@
 
   & .haxs {
     display: none;
+    @include ab.respond(s) {
+      display: block;
+    }
   }
 
   @include ab.respond(s) {
