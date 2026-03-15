@@ -171,8 +171,8 @@ textarea:focus-visible {
   justify-items: center;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  row-gap: 3rem;
-  margin: 40px auto;
+  row-gap: 2rem;
+  margin: 0 auto;
 }
 @media (min-width: 576px) {
   .project-cards__container {
@@ -263,6 +263,20 @@ textarea:focus-visible {
   top: 0px;
   left: 100px;
 }
+.project-cards__view-btn-container {
+  display: block;
+  position: relative;
+  width: fit-content;
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+.project-cards__view-btn-container::before {
+  content: "\ea3c";
+  font-family: "icomoon" !important;
+  position: absolute;
+  right: -29px;
+  top: 1px;
+}
 
 .drop-cap {
   display: none;
@@ -287,6 +301,9 @@ textarea:focus-visible {
   }
 }
 
+.contact {
+  position: relative;
+}
 .contact__title {
   margin-top: 15px;
   font-size: 2.25rem;
@@ -296,7 +313,7 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  padding: 10px 0;
+  padding: 0 5px 50px;
 }
 .contact__field {
   width: 100%;
@@ -312,7 +329,7 @@ textarea:focus-visible {
   width: fit-content;
   font-size: 1.825rem;
   font-weight: 600;
-  padding: 5px 10px;
+  padding: 0 10px 5px;
   border: 1px solid #111;
   border-radius: 5px;
   margin: 0 auto;
@@ -474,31 +491,17 @@ textarea:focus-visible {
 
 .contact {
   position: relative;
-  padding-bottom: 40px;
+  height: 100dvh;
 }
 .contact__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 0.825rem;
+  justify-content: center;
+  height: 100dvh;
   margin: 35px 0 15px 0;
   border-radius: 0 0 8px 8px;
   box-shadow: 0px 9px 13px 0px rgba(17, 17, 17, 0.4);
-}
-.contact__scroll {
-  position: absolute;
-  bottom: 0px;
-  left: 40%;
-}
-.contact__scroll::after {
-  content: "\ea44";
-  font-family: "icomoon" !important;
-  display: inline-block;
-  position: absolute;
-  transform: rotate(90deg);
-  left: 25px;
-  top: -23px;
-  color: inherit;
 }
 .contact__info {
   display: none;
@@ -508,25 +511,41 @@ textarea:focus-visible {
     display: block;
   }
 }
+.contact__scroll--2 {
+  position: absolute;
+  margin: 0 auto 0;
+  bottom: 5px;
+}
+.contact__scroll--2::after {
+  content: "\ea44";
+  font-family: "icomoon" !important;
+  display: inline-block;
+  position: absolute;
+  transform: rotate(90deg);
+  left: 25px;
+  bottom: 20px;
+  color: inherit;
+}
+
+.project-cards {
+  margin: 40px 0;
+}
+.project-cards__link:nth-last-of-type(-n + 3) {
+  display: none;
+}
+@media (min-width: 576px) {
+  .project-cards__link:nth-last-of-type(-n + 3) {
+    display: block;
+  }
+}
 
 .page {
   background-color: #f2f2f2;
   min-height: 100vh;
 }
-.page .haxs {
-  display: none;
-}
-@media (min-width: 576px) {
-  .page .haxs {
-    display: block;
-  }
-}
 @media (min-width: 576px) {
   .page {
     padding-left: 100px;
-  }
-  .page .has {
-    display: none;
   }
 }
 @media (min-width: 768px) {

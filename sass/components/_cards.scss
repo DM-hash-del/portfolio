@@ -7,8 +7,8 @@
     justify-items: center;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-    row-gap: 3rem;
-    margin: 40px auto;
+    row-gap: 2rem;
+    margin: 0 auto;
 
     @include ab.respond(s) {
       grid-template-rows: repeat(6, 1fr);
@@ -56,6 +56,19 @@
       position: absolute;
       top: 0px;
       left: 100px;
+    };
+  }
+
+  &__view-btn-container {
+    display: block;
+    position: relative;
+    width: fit-content;
+    font-size: 1.625rem;
+    font-weight: ab.$weight-bold;
+    @include ab.icon(arrow-right, before) {
+      position: absolute;
+      right: -29px;
+      top: 1px;
     };
   }
 }

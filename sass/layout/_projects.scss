@@ -1,0 +1,13 @@
+@use "../abstracts" as ab;
+
+.project-cards {
+  // height: 100dvh;
+  margin: 40px 0;
+
+  &__link:nth-last-of-type(-n + 3) {
+    display: none;
+    @include ab.respond(s) {
+      display: block;
+    }
+  }
+}

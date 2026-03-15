@@ -9,19 +9,8 @@
   // width: calc(100% - #{ab.sidebar-width(1)});
   min-height: 100vh;
 
-  & .haxs {
-    display: none;
-    @include ab.respond(s) {
-      display: block;
-    }
-  }
-
   @include ab.respond(s) {
     padding-left: ab.sidebar-width(2);
-
-    & .has {
-      display: none;
-    }
   }
 
   @include ab.respond(m) {
