@@ -3,6 +3,7 @@
 .container {
   // set page widths for content to keep from edges etc
   // border: 2px solid skyblue;
+  padding: 0 15px;
   margin: 0 auto;
   max-width: 1160px;
   // @include ab.respond(s) {

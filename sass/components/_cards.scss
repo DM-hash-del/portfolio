@@ -6,36 +6,50 @@
     display: grid;
     justify-items: center;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     row-gap: 3rem;
     margin: 40px auto;
+
+    @include ab.respond(s) {
+      grid-template-rows: repeat(6, 1fr);
+    }
   }
 
-  &__card {
+  &__link {
+    display: block;
+    width: 80%;
+    height: 240px;
     padding: 10px;
+
     border: 2px solid ab.color(primary-light);
     border-radius: .5rem;
     box-shadow:inset 0px 3px 6px 0px ab.color(font-dark);
   }
 
+  &__card {
+    padding: 10px;
+  }
+
   @for $i from 1 through 6 {
-    &__image--#{$i} {
+    &__card--#{$i} {
       background-image: url("../assets/images/project_image_#{$i}.jpg");
       @include ab.project-card {
         border-radius: .5rem .5rem 0 0;
       };
-      width: 225px;
-      height: 225px; 
+      width: 100%;
+      height: 70%;
     }
   }
+
   &__title {
     font-size: 1.625rem;
     font-weight: 600;
     text-align: left;
     padding-inline-start: 5px;
-    margin: 5px 0;
+    margin: 5px 0 0;
   }
-  &__link {
+  
+  &__button {
     position: relative;
     padding-inline-start: 5px;
     @include ab.icon(arrow-right, after){

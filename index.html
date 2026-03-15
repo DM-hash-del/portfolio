@@ -80,36 +80,37 @@
     <section id="projects" class="project-cards">
       <div class="container">
         <div class="project-cards__container">
-          <div class="project-cards__card">
-            <div class="project-cards__image--1"></div>
+          <a class="project-cards__link" href="#">
+            <div class="project-cards__card project-cards__card--1"></div>
             <h4 class="project-cards__title">Title of Project</h4>
-            <a class="project-cards__link" href="#">View Project</a>
-          </div>
-          <div class="project-cards__card">
-            <div class="project-cards__image--2"></div>
+            <div class="project-cards__button">View Project</div>
+          </a>
+          <a class="project-cards__link" href="#">
+            <div class="project-cards__card project-cards__card--2"></div>
             <h4 class="project-cards__title">Title of Project</h4>
-            <a class="project-cards__link" href="#">View Project</a>
-          </div>
-          <div class="project-cards__card">
-            <div class="project-cards__image--3"></div>
+            <div class="project-cards__button">View Project</div>
+          </a>
+          <a class="project-cards__link" href="#">
+            <div class="project-cards__card project-cards__card--3"></div>
             <h4 class="project-cards__title">Title of Project</h4>
-            <a class="project-cards__link" href="#">View Project</a>
-          </div>
-          <div class="project-cards__card">
-            <div class="project-cards__image--4"></div>
+            <div class="project-cards__button">View Project</div>
+          </a>
+          <a class="project-cards__link haxs" href="#">
+            <div class="project-cards__card project-cards__card--4"></div>
             <h4 class="project-cards__title">Title of Project</h4>
-            <a class="project-cards__link" href="#">View Project</a>
-          </div>
-          <div class="project-cards__card">
-            <div class="project-cards__image--5"></div>
+            <div class="project-cards__button">View Project</div>
+          </a>
+          <a class="project-cards__link haxs" href="#">
+            <div class="project-cards__card project-cards__card--5"></div>
             <h4 class="project-cards__title">Title of Project</h4>
-            <a class="project-cards__link" href="#">View Project</a>
-          </div>
-          <div class="project-cards__card">
-            <div class="project-cards__image--6"></div>
+            <div class="project-cards__button">View Project</div>
+          </a>
+          <a class="project-cards__link haxs" href="#">
+            <div class="project-cards__card project-cards__card--6"></div>
             <h4 class="project-cards__title">Title of Project</h4>
-            <a class="project-cards__link" href="#">View Project</a>
-          </div>
+            <div class="project-cards__button">View Project</div>
+          </a>
+
         </div>
       </div>
     </section>
@@ -125,35 +126,37 @@
             <!-- Should be naturally concerned with what text should/can go here -->
           </div>
 
+          <h2 class="contact__title has">Get In Touch</h2>
+
           <form class="form contact__form" action="" method="post">
 
             <!-- maybe use a fieldset + legend? -->
             <div class="contact__field">
-              <label class="contact__label" for="first-name">First Name</label>
+              <label class="contact__label u-visually-hidden" for="first-name">First Name</label>
               <input class="contact__input" type="text" name="first-name" id="first-name" placeholder="First Name*" required>
             </div>
             
             <div class="contact__field">
-              <label class="contact__label" for="last-name">Last Name</label>
+              <label class="contact__label u-visually-hidden" for="last-name">Last Name</label>
               <input class="contact__input" type="text" name="last-name" id="last-name" placeholder="last Name*" required>
             </div>
             
             <div class="contact__field">
-              <label class="contact__label" for="email">Email</label>
+              <label class="contact__label u-visually-hidden" for="email">Email</label>
               <input class="contact__input" type="email" name="email" id="email" placeholder="Email Address*" required>
             </div>
             
             <div class="contact__field">
-              <label class="contact__label" for="message-subject">Subject</label>
+              <label class="contact__label u-visually-hidden" for="message-subject">Subject</label>
               <input class="contact__input" type="text" name="subject" id="message-subject" placeholder="Subject">
             </div>
             
             <div class="contact__field">
-              <label class="contact__label" for="contact-message">Message</label>
+              <label class="contact__label u-visually-hidden" for="contact-message">Message</label>
               <textarea class="contact__textarea" name="contact-message" id="contact-message" cols="30" rows="10"></textarea>
             </div>
 
-            <button type="submit">Submit</button>
+            <button class="contact__submit-btn" type="submit">Submit</button>
 
           </form>
           <div class="contact__scroll">

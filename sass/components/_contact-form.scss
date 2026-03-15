@@ -1,0 +1,51 @@
+@use "../abstracts" as ab;
+
+// ! generic form styling
+
+.contact {
+
+  &__title {
+    margin-top: 15px;
+    font-size: 2.25rem;
+    font-weight: ab.$weight-thick;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px 0;
+  }
+
+  &__field {
+    width: 100%;
+  }
+
+  &__textarea {
+    width: 100%;
+    padding: 5px 15px;
+    background-color: ab.color(font-light);
+    border: 1px solid ab.color(font-dark);
+    box-shadow: inset 0px 0px 2px 1px rgba(ab.color(font-dark),0.2);
+  }
+
+  &__submit-btn {
+    width: fit-content;
+    font-size: 1.825rem;
+    font-weight: ab.$weight-bold;
+    padding: 5px 10px;
+    border: 1px solid ab.color(font-dark);
+    border-radius: 5px;
+    margin: 0 auto;
+  }
+}
+
+.form input[class^="contact"] {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  width: 100%;
+  padding: 5px 15px;
+  background-color: ab.color(font-light);
+  border: 1px solid ab.color(font-dark);
+  box-shadow: inset 0px 0px 2px 1px rgba(ab.color(font-dark),0.2);
+}

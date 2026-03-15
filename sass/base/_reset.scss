@@ -74,6 +74,58 @@ video {
   max-width: 100%;
 }
 
+input,
+textarea {
+  width: 100%;
+}
+textarea {
+  resize: vertical;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+// Accessibility
+input:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+// ! These aren't exactly required for my project so remove at compile if you want
+// input[type="seach"] {
+//   -webkit-appearance: none;
+// }
+
+// input[type="number"] {
+//   -moz-appearance: textfield;
+// }
+
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
+
+
+// ! Bug Checking Purposes
 // bug checker
 // * {
 //   outline: 2px solid plum;
