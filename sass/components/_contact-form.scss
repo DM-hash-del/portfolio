@@ -24,7 +24,7 @@
   &__textarea {
     width: 100%;
     padding: 5px 15px;
-    background-color: ab.color(font-light);
+    background-color: ab.color(font-grey);
     border: 1px solid ab.color(font-dark);
     box-shadow: inset 0px 0px 2px 1px rgba(ab.color(font-dark),0.2);
   }
@@ -45,7 +45,7 @@
   line-height: 1.5;
   width: 100%;
   padding: 5px 15px;
-  background-color: ab.color(font-light);
+  background-color: ab.color(font-grey);
   border: 1px solid ab.color(font-dark);
   box-shadow: inset 0px 0px 2px 1px rgba(ab.color(font-dark),0.2);
 }
