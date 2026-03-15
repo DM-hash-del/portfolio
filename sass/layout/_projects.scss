@@ -1,8 +1,22 @@
 @use "../abstracts" as ab;
 
+// ! use to control card layout, not design, put card layout breakpoints here
+
 .project-cards {
-  // height: 100dvh;
   margin: 40px 0;
+
+  &__container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 2rem;
+    margin: 0 auto;
+
+    @include ab.respond(s) {
+      grid-template-rows: repeat(6, 1fr);
+    }
+  }
 
   &__link:nth-last-of-type(-n + 3) {
     display: none;

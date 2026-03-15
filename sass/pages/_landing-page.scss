@@ -7,7 +7,6 @@
   background-color: ab.color(font-light);
   // padding-left: ab.sidebar-width(1);
   // width: calc(100% - #{ab.sidebar-width(1)});
-  min-height: 100vh;
 
   @include ab.respond(s) {
     padding-left: ab.sidebar-width(2);

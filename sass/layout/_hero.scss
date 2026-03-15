@@ -1,5 +1,7 @@
 @use "../abstracts" as ab;
 
+// ! this has some design and content
+
 .hero {
   position: relative;
   height: 100vh;
@@ -21,7 +23,6 @@
   &__title {
     text-align: center;
     text-wrap: balance;
-    padding: 0 15px;
   }
   &__excerpt {
     margin-top: 10px;

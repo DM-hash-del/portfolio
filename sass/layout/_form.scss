@@ -5,7 +5,10 @@
 .contact {
   position: relative;
   height: 100dvh;
+  margin-bottom: 10px;
 
+  // Controls the form flex layout
+  // align items prevents stretching. hmmm.
   &__container {
     display: flex;
     flex-direction: column;

@@ -166,19 +166,6 @@ textarea:focus-visible {
   }
 }
 
-.project-cards__container {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  row-gap: 2rem;
-  margin: 0 auto;
-}
-@media (min-width: 576px) {
-  .project-cards__container {
-    grid-template-rows: repeat(6, 1fr);
-  }
-}
 .project-cards__link {
   display: block;
   width: 80%;
@@ -311,12 +298,14 @@ textarea:focus-visible {
 }
 .contact__form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   row-gap: 10px;
   padding: 0 5px 50px;
 }
 .contact__field {
-  width: 100%;
+  width: 90%;
 }
 .contact__textarea {
   width: 100%;
@@ -348,6 +337,11 @@ textarea:focus-visible {
 .nav-menu {
   display: none;
 }
+@media (min-width: 576px) {
+  .nav-menu {
+    display: block;
+  }
+}
 .nav-menu__list {
   display: flex;
   flex-direction: column;
@@ -377,6 +371,11 @@ textarea:focus-visible {
   flex-direction: column;
   flex-wrap: wrap;
 }
+@media (min-width: 1200px) {
+  .nav-menu__social-list {
+    flex-direction: row;
+  }
+}
 .nav-menu__social-item {
   margin: 10px auto;
 }
@@ -401,12 +400,9 @@ textarea:focus-visible {
   font-family: "icomoon" !important;
   font-size: 3.25rem;
 }
-@media (min-width: 576px) {
-  .nav-menu {
-    display: block;
-  }
-}
+
 .side-bar {
+  border: 1px solid red;
   position: fixed;
   top: 0;
   left: 0;
@@ -437,8 +433,10 @@ textarea:focus-visible {
   .side-bar {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     width: 100%;
-    height: fit-content;
+    height: 100px;
+    margin-top: 0;
   }
 }
 
@@ -467,7 +465,6 @@ textarea:focus-visible {
 .hero__title {
   text-align: center;
   text-wrap: balance;
-  padding: 0 15px;
 }
 .hero__excerpt {
   margin-top: 10px;
@@ -492,6 +489,7 @@ textarea:focus-visible {
 .contact {
   position: relative;
   height: 100dvh;
+  margin-bottom: 10px;
 }
 .contact__container {
   display: flex;
@@ -530,6 +528,19 @@ textarea:focus-visible {
 .project-cards {
   margin: 40px 0;
 }
+.project-cards__container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 2rem;
+  margin: 0 auto;
+}
+@media (min-width: 576px) {
+  .project-cards__container {
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
 .project-cards__link:nth-last-of-type(-n + 3) {
   display: none;
 }
@@ -541,7 +552,6 @@ textarea:focus-visible {
 
 .page {
   background-color: #f2f2f2;
-  min-height: 100vh;
 }
 @media (min-width: 576px) {
   .page {

@@ -3,6 +3,19 @@
 .nav-menu {
   display: none;
 
+  @include ab.respond(s) {
+    display: block;
+  }
+  @include ab.respond(m) {
+
+  }
+  @include ab.respond(l) {
+
+  }
+  @include ab.respond(xl) {
+  }
+
+  // !If you change how the nav-menu actually behaves, do it here, the layout only controls it's positioning in the wider page.
   &__list {
     display: flex;
     flex-direction: column;
@@ -12,6 +25,7 @@
 
     @include ab.respond(xl) {
       flex-direction: row;
+
     }
   }
 
@@ -30,10 +44,15 @@
     line-height: 1;
   }
 
+  // ! Control social icons here
   &__social-list {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
+    @include ab.respond(xl) {
+      flex-direction: row;
+    }
   }
 
   &__social-item {
@@ -61,17 +80,5 @@
         font-size: 3.25rem;
       }
     }
-  }
-
-  @include ab.respond(s) {
-    display: block;
-  }
-  @include ab.respond(m) {
-
-  }
-  @include ab.respond(l) {
-
-  }
-  @include ab.respond(xl) {
   }
 }

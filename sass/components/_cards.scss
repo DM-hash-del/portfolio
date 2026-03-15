@@ -2,19 +2,6 @@
 
 
 .project-cards {
-  &__container {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 2rem;
-    margin: 0 auto;
-
-    @include ab.respond(s) {
-      grid-template-rows: repeat(6, 1fr);
-    }
-  }
-
   &__link {
     display: block;
     width: 80%;
