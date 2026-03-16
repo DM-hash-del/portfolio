@@ -4,7 +4,7 @@
 
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 100dvh;
   background-image: linear-gradient(0deg, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 9%, rgba(17, 17, 17, 0.48) 35%, rgba(17, 17, 17, 0) 100%), url(../assets/images/hero_2.jpg);
   background-size: cover;
   background-position: center;
@@ -16,7 +16,9 @@
     flex-wrap: nowrap;
     align-items: center;
     padding-top: 230px;
-
+    @media (orientation: landscape) {
+      padding-top: 130px;
+    }
     color: ab.color(font-light);
   }
 

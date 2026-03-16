@@ -4,8 +4,7 @@
 
 .contact {
   position: relative;
-  height: 100dvh;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 
   // Controls the form flex layout
   // align items prevents stretching. hmmm.
@@ -14,8 +13,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100dvh;
     margin: 35px 0 15px 0;
+    border: 2px solid ab.color(font-grey);
     border-radius: 0 0 8px 8px;
     box-shadow: 0px 9px 13px 0px rgba(ab.color(font-dark),0.4);
   }
@@ -30,7 +29,7 @@
   &__scroll--2 {
     position: absolute;
     margin: 0 auto 0;
-    bottom: 5px;
+    bottom: 34px;
     @include ab.icon(circle-left, after) {
       display: inline-block;
       position: absolute;

@@ -18,27 +18,29 @@
   // !If you change how the nav-menu actually behaves, do it here, the layout only controls it's positioning in the wider page.
   &__list {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     row-gap: 25px;
     margin-block-start: 25px;
-
-    @include ab.respond(xl) {
-      flex-direction: row;
-
-    }
   }
 
   &__item {
     // margin: 0 auto;
+    width: 100%;
+    padding: 0 10px;
+    &:nth-last-of-type(2) {
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+    }
     @include ab.respond(xl) {
       margin: 0;
     }
   }
 
   &__link {
-    display: inline-block;
-    text-align: center;
+    // display: inline-block;
+    // text-align: center;
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1;

@@ -13,3 +13,7 @@
 @function breakpoint($value) {
   @return map.get($breakpoints, $value);
 }
+
+@function content-width($breakpoint, $side-bar-index) {
+  @return calc(map.get(v.$breakpoints, $breakpoint) / sidebar-width($side-bar-index));
+}

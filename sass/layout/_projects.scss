@@ -1,6 +1,6 @@
 @use "../abstracts" as ab;
 
-// ! use to control card layout, not design, put card layout breakpoints here
+// ? use to control card layout, not design, put card layout breakpoints here
 
 .project-cards {
   margin: 40px 0;
@@ -11,17 +11,42 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     row-gap: 2rem;
+    padding: 20px 0;
+    border: 1px solid ab.color(primary-light);
+    border-radius: 15px;
     margin: 0 auto;
-
+    box-shadow: 0px 4px 5px 0px ab.color(primary-dark);
     @include ab.respond(s) {
-      grid-template-rows: repeat(6, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      column-gap: 2rem;
+    }
+
+    @include ab.respond(l) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    @include ab.respond(xl) {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 4rem;
     }
   }
 
   &__link:nth-last-of-type(-n + 3) {
     display: none;
-    @include ab.respond(s) {
+
+    // ! causes issues on mobile in horizontal view
+    @include ab.respond(l) {
+      // display: block;
+      &:nth-last-of-type(-n + 1) {
+        display: block;
+      }
+    }
+    @include ab.respond(xl) {
       display: block;
     }
   }
+
+
 }
