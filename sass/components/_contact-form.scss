@@ -91,7 +91,7 @@
     width: fit-content;
     font-size: 1.825rem;
     font-weight: ab.$weight-bold;
-    padding: 0 10px 5px;
+    padding: 0 10px 0;
     border: 1px solid ab.color(font-dark);
     border-radius: 5px;
     margin: 0 auto;
@@ -104,6 +104,10 @@
     @include ab.respond(xl) {
       grid-column: 2 / -6;
       margin: 0;
+    }
+    &:hover {
+      background-color: ab.color(font-dark);
+      color: ab.color(font-light);
     }
   }
 

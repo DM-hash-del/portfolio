@@ -25,9 +25,21 @@
   &__title {
     text-align: center;
     text-wrap: balance;
+    @include ab.respond(l) {
+      font-size: 2.825rem;
+    }
+    @include ab.respond(xl) {
+      font-size: 4rem;
+    }
   }
   &__excerpt {
     margin-top: 10px;
+    @include ab.respond(l) {
+      font-size: 1.825rem;
+    }
+    @include ab.respond(xl) {
+      font-size: 2.5rem;
+    }
   }
 
   &__scroll {

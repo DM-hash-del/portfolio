@@ -1,0 +1,21 @@
+@use "../abstracts" as ab;
+
+.content-adjust {
+  padding-left: ab.sidebar-width(1);
+  
+  @include ab.respond(s) {
+    padding-left: ab.sidebar-width(2);
+  }
+
+  @include ab.respond(m) {
+    padding-left: ab.sidebar-width(3);
+  }
+
+  @include ab.respond(l) {
+    padding-left: ab.sidebar-width(4);
+  }
+
+  @include ab.respond(xl) {
+    padding-left: ab.sidebar-width(5);
+  }
+}

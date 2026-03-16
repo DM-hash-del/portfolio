@@ -1,0 +1,21 @@
+@use "../abstracts" as ab;
+
+.scheme-container {
+  background-color: ab.color(font-light);
+  &__details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border: 1px solid black;
+  }
+
+  &__title {
+    font-size: 2.25rem;
+    font-weight: ab.$weight-bold;
+  }
+
+  &__excerpt {
+    font-size: 1.125rem;
+    font-weight: ab.$weight-thin;
+  }
+}
