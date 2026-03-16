@@ -172,6 +172,11 @@ textarea:focus-visible {
   border: 2px solid #d7f4b4;
   border-radius: 0.5rem;
   box-shadow: inset 0px 3px 6px 0px #111;
+  transition: box-shadow transform 0.4s cubic-bezier(0.65, -2.2, 1, 1);
+}
+.project-cards__link:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: inset 0 0 0 #111, 0px 6px 12px #111;
 }
 .project-cards__card {
   padding: 10px;
@@ -303,7 +308,6 @@ textarea:focus-visible {
   text-align: center;
 }
 .contact__title {
-  margin-top: 15px;
   font-size: 2.25rem;
   font-weight: 900;
 }
@@ -317,6 +321,11 @@ textarea:focus-visible {
 @media (min-width: 576px) {
   .contact__form {
     grid-template-columns: repeat(6, minmax(60px, 1fr));
+  }
+}
+@media (min-width: 1200px) {
+  .contact__form {
+    grid-template-columns: repeat(8, minmax(60px, 1fr));
   }
 }
 .contact__field {
@@ -340,10 +349,10 @@ textarea:focus-visible {
     grid-template-columns: repeat(6, minmax(120px, 1fr));
   }
   .contact__field:nth-child(1) {
-    grid-column: 2/4;
+    grid-column: 2/-5;
   }
   .contact__field:nth-of-type(2) {
-    grid-column: 4/6;
+    grid-column: 5/-2;
   }
   .contact__field:nth-of-type(3) {
     grid-column: 2/-2;
@@ -362,6 +371,9 @@ textarea:focus-visible {
   border: 1px solid #111;
   box-shadow: inset 0px 0px 2px 1px rgba(17, 17, 17, 0.2);
 }
+.contact__textarea:focus {
+  background-color: #f2f2f2;
+}
 .contact__submit-btn {
   width: fit-content;
   font-size: 1.825rem;
@@ -379,7 +391,8 @@ textarea:focus-visible {
 }
 @media (min-width: 1200px) {
   .contact__submit-btn {
-    grid-column: 3/-3;
+    grid-column: 2/-6;
+    margin: 0;
   }
 }
 
@@ -423,14 +436,21 @@ textarea:focus-visible {
   }
 }
 .nav-menu__link {
+  display: inline-block;
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1;
+  width: 100%;
+}
+.nav-menu__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .nav-menu__social-list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  gap: 15px;
 }
 @media (min-width: 1200px) {
   .nav-menu__social-list {
@@ -564,13 +584,35 @@ textarea:focus-visible {
   border-radius: 0 0 8px 8px;
   box-shadow: 0px 9px 13px 0px rgba(17, 17, 17, 0.4);
 }
+@media (min-width: 1200px) {
+  .contact__container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 20px;
+  }
+}
 .contact__info {
   display: none;
+  text-align: center;
 }
 @media (min-width: 576px) {
   .contact__info {
     display: block;
   }
+}
+@media (min-width: 1200px) {
+  .contact__info {
+    align-self: flex-start;
+    flex: 0 0 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .contact__excerpt {
+    text-align: left;
+  }
+}
+.contact__form {
+  flex: 0 0 75%;
 }
 .contact__scroll--2 {
   position: absolute;
@@ -601,7 +643,7 @@ textarea:focus-visible {
   border: 1px solid #d7f4b4;
   border-radius: 15px;
   margin: 0 auto;
-  box-shadow: 0px 4px 5px 0px #6cb01a;
+  box-shadow: 0px 4px 5px 0px #ddd;
 }
 @media (min-width: 576px) {
   .project-cards__container {
@@ -638,6 +680,8 @@ textarea:focus-visible {
 
 .page {
   background-color: #f2f2f2;
+  scroll-snap-type: proximity;
+  scroll-behavior: smooth;
 }
 @media (min-width: 576px) {
   .page {
@@ -658,6 +702,11 @@ textarea:focus-visible {
   .page {
     padding-left: 200px;
   }
+}
+
+.hero,
+.contact {
+  scroll-snap-align: start;
 }
 
 .u-visually-hidden {

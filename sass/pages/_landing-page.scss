@@ -7,6 +7,8 @@
   background-color: ab.color(font-light);
   // padding-left: ab.sidebar-width(1);
   // width: calc(100% - #{ab.sidebar-width(1)});
+  scroll-snap-type: proximity;
+  scroll-behavior: smooth;
 
   @include ab.respond(s) {
     padding-left: ab.sidebar-width(2);
@@ -25,4 +27,9 @@
     padding-left: ab.sidebar-width(5);
     // padding-left: 0;
   }
+}
+
+.hero,
+.contact {
+  scroll-snap-align: start;
 }

@@ -12,6 +12,11 @@
     border: 2px solid ab.color(primary-light);
     border-radius: .5rem;
     box-shadow:inset 0px 3px 6px 0px ab.color(font-dark);
+    transition: box-shadow transform 0.4s cubic-bezier(0.65, -2.2, 1, 1);
+    &:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: inset 0 0 0 ab.color(font-dark), 0px 6px 12px ab.color(font-dark);
+    }
   }
 
   &__card {

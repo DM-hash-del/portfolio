@@ -6,14 +6,6 @@
   @include ab.respond(s) {
     display: block;
   }
-  @include ab.respond(m) {
-
-  }
-  @include ab.respond(l) {
-
-  }
-  @include ab.respond(xl) {
-  }
 
   // !If you change how the nav-menu actually behaves, do it here, the layout only controls it's positioning in the wider page.
   &__list {
@@ -39,11 +31,16 @@
   }
 
   &__link {
-    // display: inline-block;
+    display: inline-block;
     // text-align: center;
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1;
+    width: 100%;
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
   }
 
   // ! Control social icons here
@@ -51,6 +48,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    gap: 15px;
 
     @include ab.respond(xl) {
       flex-direction: row;
