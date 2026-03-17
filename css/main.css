@@ -733,6 +733,33 @@ textarea:focus-visible {
   scroll-snap-align: start;
 }
 
+.scs-scheme {
+  padding-left: 15px;
+  padding-top: 25px;
+}
+.scs-scheme__title {
+  text-align: center;
+}
+.scs-scheme__excerpt {
+  line-height: 1.6;
+  text-wrap-style: pretty;
+}
+.scs-scheme__sub-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.scs-scheme__list-item {
+  padding-left: 5px;
+}
+.scs-scheme__hr {
+  border: none;
+  margin: 5px 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #333, transparent);
+}
+
 .u-visually-hidden {
   position: absolute;
   width: 1px;
