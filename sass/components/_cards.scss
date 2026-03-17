@@ -10,7 +10,7 @@
     padding: 10px;
 
     border: 2px solid ab.color(primary-light);
-    border-radius: .5rem;
+    border-radius: 8px;
     box-shadow:inset 0px 3px 6px 0px ab.color(font-dark);
     transition: box-shadow transform 0.4s cubic-bezier(0.65, -2.2, 1, 1);
     &:hover {
@@ -27,7 +27,7 @@
     &__card--#{$i} {
       background-image: url("../assets/images/project_image_#{$i}.webp");
       @include ab.project-card {
-        border-radius: .5rem .5rem 0 0;
+        border-radius: 8px 8px 0 0;
       };
       width: 100%;
       height: 70%;

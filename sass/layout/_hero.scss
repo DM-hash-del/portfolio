@@ -10,14 +10,22 @@
   background-position: center;
   background-repeat: no-repeat;
 
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100dvh;
+    // border: 1px solid red;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    padding-top: 230px;
+    justify-content: center;
+    // padding-top: 230px;
     @media (orientation: landscape) {
-      padding-top: 130px;
+      // padding-top: 130px;
     }
     color: ab.color(font-light);
   }

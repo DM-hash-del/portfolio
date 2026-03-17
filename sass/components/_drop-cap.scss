@@ -5,7 +5,7 @@
   width: 100%;
   // margin: 0 auto;
   text-align: center;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   
   &__text {
     display: inline-block;
@@ -13,7 +13,11 @@
     font-size: 4rem;
     font-weight: 800;
     text-transform: uppercase;
+    &:visited {
+      color: ab.color(primary-dark);
+    }
   }
+
 
   @include ab.respond(s) {
     display: block;
