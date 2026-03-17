@@ -182,7 +182,7 @@ textarea:focus-visible {
   padding: 10px;
 }
 .project-cards__card--1 {
-  background-image: url("../assets/images/project_image_1.jpg");
+  background-image: url("../assets/images/project_image_1.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -191,7 +191,7 @@ textarea:focus-visible {
   height: 70%;
 }
 .project-cards__card--2 {
-  background-image: url("../assets/images/project_image_2.jpg");
+  background-image: url("../assets/images/project_image_2.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -200,7 +200,7 @@ textarea:focus-visible {
   height: 70%;
 }
 .project-cards__card--3 {
-  background-image: url("../assets/images/project_image_3.jpg");
+  background-image: url("../assets/images/project_image_3.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -209,7 +209,7 @@ textarea:focus-visible {
   height: 70%;
 }
 .project-cards__card--4 {
-  background-image: url("../assets/images/project_image_4.jpg");
+  background-image: url("../assets/images/project_image_4.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -218,7 +218,7 @@ textarea:focus-visible {
   height: 70%;
 }
 .project-cards__card--5 {
-  background-image: url("../assets/images/project_image_5.jpg");
+  background-image: url("../assets/images/project_image_5.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -227,7 +227,7 @@ textarea:focus-visible {
   height: 70%;
 }
 .project-cards__card--6 {
-  background-image: url("../assets/images/project_image_6.jpg");
+  background-image: url("../assets/images/project_image_6.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -530,7 +530,7 @@ textarea:focus-visible {
 .hero {
   position: relative;
   min-height: 100dvh;
-  background-image: linear-gradient(0deg, rgb(17, 17, 17) 0%, rgb(17, 17, 17) 9%, rgba(17, 17, 17, 0.48) 35%, rgba(17, 17, 17, 0) 100%), url(../assets/images/hero_2.jpg);
+  background-image: linear-gradient(0deg, rgb(17, 17, 17) 0%, rgb(17, 17, 17) 9%, rgba(17, 17, 17, 0.48) 35%, rgba(17, 17, 17, 0) 100%), url(../assets/images/hero_2.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
