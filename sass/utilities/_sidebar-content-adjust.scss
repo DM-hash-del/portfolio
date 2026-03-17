@@ -4,7 +4,7 @@
   padding-left: ab.sidebar-width(1);
   
   @include ab.respond(s) {
-    padding-left: ab.sidebar-width(2);
+    padding-left: calc(ab.sidebar-width(2) + 15px);
   }
 
   @include ab.respond(m) {
