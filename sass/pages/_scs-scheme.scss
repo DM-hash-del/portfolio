@@ -1,31 +1,6 @@
 .scs-scheme {
-  padding-left: 15px;
+  padding-left: 50px;
   padding-top: 25px;
-
-  &__title {
-    text-align: center;
-  }
-
-  &__excerpt {
-    line-height: 1.6;
-    text-wrap-style: pretty;
-  }
-
-  &__sub-title {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  &__list-item {
-    padding-left: 5px;
-  }
-
-  &__hr {
-    border: none;
-    margin: 5px 0;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #333, transparent);
-  }
+  padding-right: 50px;
+  padding-bottom: 25px;
 }
