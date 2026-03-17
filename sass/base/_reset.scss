@@ -108,8 +108,9 @@ textarea {
 // Accessibility
 input:focus-visible,
 textarea:focus-visible {
-  outline: 1px solid currentColor;
+  outline: 1px dashed currentColor;
   outline-offset: 2px;
+  background-color: ab.color(font-light);
 }
 
 // ! These aren't exactly required for my project so remove at compile if you want

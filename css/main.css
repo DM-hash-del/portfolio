@@ -103,8 +103,9 @@ textarea {
 
 input:focus-visible,
 textarea:focus-visible {
-  outline: 1px solid currentColor;
+  outline: 1px dashed currentColor;
   outline-offset: 2px;
+  background-color: #f2f2f2;
 }
 
 @font-face {
@@ -411,6 +412,9 @@ textarea:focus-visible {
   background-color: #ddd;
   border: 1px solid #111;
   box-shadow: inset 0px 0px 2px 1px rgba(17, 17, 17, 0.2);
+}
+.form input[class^=contact]:focus-visible, .form input[class^=contact] textarea:focus-visible {
+  background-color: #f2f2f2;
 }
 
 .nav-menu {

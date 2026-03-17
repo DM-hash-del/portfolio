@@ -134,4 +134,7 @@
   background-color: ab.color(font-grey);
   border: 1px solid ab.color(font-dark);
   box-shadow: inset 0px 0px 2px 1px rgba(ab.color(font-dark),0.2);
+  &:focus-visible, textarea:focus-visible {
+    background-color: ab.color(font-light);
+  }
 }
