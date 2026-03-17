@@ -105,7 +105,6 @@ input:focus-visible,
 textarea:focus-visible {
   outline: 1px dashed currentColor;
   outline-offset: 2px;
-  background-color: #f2f2f2;
 }
 
 @font-face {
@@ -315,6 +314,11 @@ textarea:focus-visible {
 .contact__title {
   font-size: 2.25rem;
   font-weight: 900;
+}
+@media (min-width: 1200px) {
+  .contact__title {
+    text-align: left;
+  }
 }
 .contact__form {
   display: grid;
@@ -612,17 +616,20 @@ textarea:focus-visible {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-}
-.hero__content {
   color: #f2f2f2;
 }
 .hero__title {
   text-align: center;
   text-wrap: balance;
 }
+@media (min-width: 576px) {
+  .hero__title {
+    font-size: 3.25rem;
+  }
+}
 @media (min-width: 992px) {
   .hero__title {
-    font-size: 2.825rem;
+    font-size: 4.825rem;
   }
 }
 @media (min-width: 1200px) {
@@ -632,15 +639,16 @@ textarea:focus-visible {
 }
 .hero__excerpt {
   margin-top: 10px;
+  font-size: 1.825rem;
 }
 @media (min-width: 992px) {
   .hero__excerpt {
-    font-size: 1.825rem;
+    font-size: 2.825rem;
   }
 }
 @media (min-width: 1200px) {
   .hero__excerpt {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 .hero__scroll {
