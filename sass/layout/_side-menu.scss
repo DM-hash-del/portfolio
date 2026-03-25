@@ -3,12 +3,14 @@
 // background-color, left, top, all need to be reset on breakpoint (S)+
 
 .side-bar {
-  position: fixed;
-  top: 30px;
-  left: -2px;
-  width: ab.sidebar-width(1);
-  height: 100dvh;
+  position: fixed; 
+  left: -2px;  
+  width: ab.sidebar-width(1);  
+  height: 100dvh; 
+
+  
   z-index: 1000;
+  // background-color: ab.color(font-light);
   
   @include ab.respond(s) {
     width: ab.sidebar-width(2);

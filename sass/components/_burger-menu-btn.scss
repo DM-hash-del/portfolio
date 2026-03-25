@@ -1,6 +1,13 @@
 @use "../abstracts" as ab;
 
 .burger-container {
+  position: fixed;
+  // position: static;
+  z-index: 999999;
+  top: 50px;
+  left: 10px;
+
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -19,4 +26,10 @@
   @include ab.respond(s) {
     display: none;
   }
+}
+
+#left-menu {
+  position: static;
+  left: 50px;
+  top: 50px;
 }
