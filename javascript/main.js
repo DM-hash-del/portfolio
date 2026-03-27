@@ -44,35 +44,29 @@ $(document).ready(function() {
     }
   });
 
-
-  startTypeWriter($(".hero__title"), devTitle, 175);
-  startTypeWriter($(".hero__excerpt--small"), devDescription, 175);
+  setTimeout(() => {
+    startTypeWriter($(".hero__title"), devTitle, 90)
+      .then(() => { 
+        setTimeout(() => { startTypeWriter($(".hero__excerpt--small"), devDescription, 90)}, 1000);
+      });
+  }, 1500);
 });
 
 
-function startTypeWriter(el, str, interval) {  
-  let tempDevTitle = '';
-  let timerId;
-  let increment = 0;
-  let add;
-  let remove;
-
-  // add = setInterval(() => {
-  //   el.addClass("tw-bar");
-  // }, 175);
-
-  timerId = setInterval(() => {
-    tempDevTitle += str[increment]
-    el.text(tempDevTitle);
-    increment++;
-    if (tempDevTitle.length === str.length) {
-      clearInterval(timerId)
-      // clearInterval(add)
-      // clearInterval(remove)
-      // el.removeClass("tw-bar");
-      // remove = setInterval(() => {
-      //   el.removeClass("tw-bar");
-      // }, 600);
+function startTypeWriter(el, str, delay) {
+  el.addClass("tw-bar");
+  return new Promise((res) => {
+    let increment = 0;
+    function nextChar() {
+      if (increment >= str.length) {
+        $(".hero__title").removeClass("tw-bar");
+        return res();
+      } else {
+        el.text(str.slice(0, increment + 1));
+        increment++;
+        setTimeout(() => { nextChar(); }, delay);
+      }
     };
-  }, interval);
+    nextChar();
+  });
 };
