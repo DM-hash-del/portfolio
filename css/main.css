@@ -638,6 +638,7 @@ textarea:focus-visible {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding: 0 30px;
 }
 .hero__wrapper {
   display: flex;
@@ -653,36 +654,87 @@ textarea:focus-visible {
   color: #f2f2f2;
 }
 .hero__title {
+  position: relative;
   text-align: center;
   text-wrap: balance;
+  margin-bottom: 4rem;
+  height: 80px;
+}
+.hero__title strong {
+  display: block;
+  font-size: 1.825rem;
+}
+@media (min-width: 360px) {
+  .hero__title strong {
+    font-size: 2.4rem;
+  }
+}
+@media (min-width: 576px) {
+  .hero__title strong {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero__title strong {
+    font-size: 4.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero__title strong {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero__title strong {
+    font-size: 4.825rem;
+  }
 }
 @media (min-width: 576px) {
   .hero__title {
     font-size: 3.25rem;
+    height: 130px;
+  }
+}
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 4rem;
+    height: 160px;
   }
 }
 @media (min-width: 992px) {
   .hero__title {
     font-size: 4.825rem;
+    height: 190px;
   }
 }
 @media (min-width: 1200px) {
   .hero__title {
     font-size: 4rem;
+    height: 80px;
   }
 }
 .hero__excerpt {
   margin-top: 10px;
-  font-size: 1.825rem;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
 }
-@media (min-width: 992px) {
+.hero__excerpt--small {
+  position: relative;
+}
+@media (min-width: 576px) {
   .hero__excerpt {
     font-size: 2.825rem;
   }
 }
+@media (min-width: 992px) {
+  .hero__excerpt {
+    font-size: 4.5rem;
+  }
+}
 @media (min-width: 1200px) {
   .hero__excerpt {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 }
 .hero__scroll {
@@ -702,6 +754,21 @@ textarea:focus-visible {
   top: 20px;
 }
 
+.tw-bar::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  height: 70px;
+  top: 11px;
+  border-right: 5px solid #f2f2f2;
+  animation: blink 1.3s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 .contact {
   position: relative;
   padding-bottom: 10px;

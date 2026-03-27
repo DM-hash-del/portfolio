@@ -1,7 +1,5 @@
 @use "../abstracts" as ab;
 
-// ! this has some design and content
-
 .hero {
   position: relative;
   min-height: 100dvh;
@@ -9,12 +7,12 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding: 0 30px;
 
   &__wrapper {
     display: flex;
     justify-content: center;
     height: 100dvh;
-    // border: 1px solid red;
   }
 
   &__content {
@@ -24,33 +22,69 @@
     align-items: center;
     justify-content: center;
     color: ab.color(font-light);
-    // padding-top: 230px;
-    // @media (orientation: landscape) {
-      // padding-top: 130px;
-    // }
   }
 
   &__title {
+    position: relative;
     text-align: center;
     text-wrap: balance;
+    // line-height: 1.2;
+    margin-bottom: 4rem;
+
+    height: 80px;
+
+    & strong {
+      display: block;
+      font-size: 1.825rem;
+      @media (min-width: 360px) {
+        font-size: 2.4rem;
+      }
+      @include ab.respond(s) {
+        font-size: 3.5rem;
+      }
+      @include ab.respond(m) {
+        font-size: 4.2rem;
+      }
+      @include ab.respond(l) {
+        font-size: 5rem;
+      }
+      @include ab.respond(xl) {
+        font-size: 4.825rem;
+      }
+    }
     @include ab.respond(s) {
       font-size: 3.25rem;
+      height: 130px;
+    }
+    @include ab.respond(m) {
+      font-size: 4rem;
+      height: 160px;
     }
     @include ab.respond(l) {
       font-size: 4.825rem;
+      height: 190px;
     }
     @include ab.respond(xl) {
       font-size: 4rem;
+      height: 80px;
     }
   }
   &__excerpt {
     margin-top: 10px;
-    font-size: 1.825rem;
-    @include ab.respond(l) {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    &--small {
+      position: relative;
+    }
+    @include ab.respond(s) {
       font-size: 2.825rem;
     }
+    @include ab.respond(l) {
+      font-size: 4.5rem;
+    }
     @include ab.respond(xl) {
-      font-size: 3rem;
+      font-size: 5rem;
     }
   }
 
@@ -68,4 +102,25 @@
       top: 20px;
     }
   }
+}
+
+@mixin type-bar {
+  &::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    height: 70px;
+    top: 11px;
+    border-right: 5px solid ab.color(font-light);
+    animation: blink 1.3s step-end infinite;
+    @content;
+  }
+}
+
+.tw-bar {
+  @include type-bar;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
