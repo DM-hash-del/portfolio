@@ -9,7 +9,7 @@ $breakpoints: (
 // Because of the static sidebar the rest of the page needs to be pushed over
 // maybe this can be a calculated adjustment or fixed
 // ! Values should range in accordance to the breakpoints xs > s > m > l > xl
-$sidebar-adjustments: (46px, 100px, 120px, 150px, 200px);
+$sidebar-adjustments: (46px, 100px, 120px, 150px, 250px);
 
 $font-primary: "Noto Sans", Arial, Helvetica, sans-serif;
 $weight-thin: 100;

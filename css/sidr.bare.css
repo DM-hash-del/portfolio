@@ -3,16 +3,19 @@
     position: fixed;
     top: 0;
     height: 100%;
-    z-index: 999999;
+    z-index: 999998;
     width: 260px;
+    /* width: 100%; */
     overflow-x: hidden;
     overflow-y: auto
 }
 .sidr.sidr-right {
     left: auto;
     right: -260px;
+    /* right: -100%; */
 }
 .sidr.sidr-left {
-    left: -260px;
     right: auto;
+    left: -260px;
+    /* left: -100%; */
 }

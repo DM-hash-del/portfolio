@@ -11,26 +11,23 @@
 @mixin burger-graphic {
   position: relative;
   height: 8px;
-  width: calc(fn.sidebar-width(1) - 4px);
+  width: calc(fn.sidebar-width(1) - 10px);
   background-color: fn.color(font-dark);
-  // border-radius: 0 5px 5px 0;
   &::before {
     content: "";
     position: absolute;
     height: 8px;
-    width: calc(fn.sidebar-width(1) - 4px);
+    width: calc(fn.sidebar-width(1) - 10px);
     background-color: fn.color(font-dark);
-    // border-radius: 0 5px 5px 0;
-    top: -12px;
+    top: -13px;
   }
   &::after {
     content: "";
     position: absolute;
     height: 8px;
-    width: calc(fn.sidebar-width(1) - 4px);
+    width: calc(fn.sidebar-width(1) - 10px);
     background-color: fn.color(font-dark);
-    // border-radius: 0 5px 5px 0;
-    top: 12px;
+    top: 13px;
   }
   @content;
 }

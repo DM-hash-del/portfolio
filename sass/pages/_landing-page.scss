@@ -7,20 +7,21 @@
   background-color: ab.color(font-light);
   // padding-left: ab.sidebar-width(1);
   // width: calc(100% - #{ab.sidebar-width(1)});
-  scroll-snap-type: proximity;
+  // scroll-snap-type: proximity;
   scroll-behavior: smooth;
 
-  @include ab.respond(s) {
-    padding-left: ab.sidebar-width(2);
-  }
+  // ! Removed bc sidr
+  // @include ab.respond(s) {
+  //   padding-left: ab.sidebar-width(2);
+  // }
 
-  @include ab.respond(m) {
-    padding-left: ab.sidebar-width(3);
-  }
+  // @include ab.respond(m) {
+  //   padding-left: ab.sidebar-width(3);
+  // }
 
-  @include ab.respond(l) {
-    padding-left: ab.sidebar-width(4);
-  }
+  // @include ab.respond(l) {
+  //   padding-left: ab.sidebar-width(4);
+  // }
 
   @include ab.respond(xl) {
     // ! don't need this unless you keep the sidebar on the side !

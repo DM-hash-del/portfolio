@@ -1,36 +1,32 @@
 @use "../abstracts" as ab;
 
 .nav-menu {
-  display: none;
-
-  @include ab.respond(s) {
-    display: block;
-  }
-
   // !If you change how the nav-menu actually behaves, do it here, the layout only controls it's positioning in the wider page.
   &__list {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    // gap: 25px; // larger view
     margin-block-start: 25px;
   }
 
   &__item {
     width: 100%;
     height: 60px;
-
-    &--social {
-      margin-top: 25px;
-    }
-
     &:nth-last-of-type(2) {
       border-top: 1px solid black;
       border-bottom: 1px solid black;
+      margin-top: 25px;
     }
-
     &:hover {
       background-color: rgba($color: #000000, $alpha: .05);
+    }
+    @include ab.respond(xl) {
+      height: 85px;
+      &--social {
+        margin-top: 25px;
+      }
     }
   }
 
@@ -38,11 +34,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3rem; // set for max-width
-    font-weight: 600;
-    line-height: 1;
     width: 100%;
     height: 100%;
+    font-size: 2rem; // set for max-width
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
     &:hover {
       text-decoration: underline;
       text-underline-offset: 4px;
@@ -52,45 +49,41 @@
   // ! Control social icons here
   &__social-list {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 15px;
-
-    @include ab.respond(xl) {
-      flex-direction: row;
-    }
-  }
-
-  &__social-item {
-    margin: 10px auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    // gap: 80px; // larger width
+    gap: 20px;
+    // padding: 15px 30px; // larger width
+    padding: 5px 0;
+    // border: 1px solid ab.color(primary-dark); // larger width?
+    // border-radius: 8px; // larger width?
   }
 
   &__social-link {
     display: inline-block;
+    height: 100%;
+    width: 100%;
   }
 
   &__social-icon {
-    display: inline-block;
-    width: 52px;
-    height: 52px;
     color: ab.color(primary-dark);
-    border-radius: 50%;
-    line-height: 1;
     &--github {
       @include ab.icon(github, before) {
         font-size: 3.25rem;
+        // font-size: 6.25rem; // larger width?
       }
     }
     &--linkedin {
       @include ab.icon(linkedin, before) {
         font-size: 3.25rem;
+        // font-size: 6.25rem; //larger width?
       }
     }
   }
 }
 
 .drop-cap {
-  display: none;
+  // display: none; // switch off for sidr
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -99,7 +92,7 @@
   &__text {
     display: inline-block;
     color: ab.color(primary-dark);
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 800;
     text-transform: uppercase;
     &:visited {
@@ -117,5 +110,25 @@
   }
   @include ab.respond(xl) {
     margin: 0;
+  }
+}
+
+.close-sidr {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  height: 58px;
+  font-size: 2rem;
+  cursor: pointer;
+  @include ab.icon(arrow-left) {
+    position: absolute;
+    left: 1.5rem;
+    color: ab.color(primary-dark);
+  };
+  // ! ADD MEDIA QUERIES
+  @include ab.respond(xl) {
+    display: none;
   }
 }

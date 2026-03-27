@@ -14,8 +14,8 @@ html {
 
   // sets an auto scroll behavior
   // needs to be on the element that's actually scrolling
-  // scroll-snap-type: y proximity;
-  // scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
   scroll-padding-block-end: 200px;
 }
 
@@ -27,6 +27,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; // macOS specific
   min-height: 100dvh;
+}
+
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
 }
 
 ul, ol {

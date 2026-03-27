@@ -3,57 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sidr.bare.css">
   <link rel="stylesheet" href="css/main.css">
   <title>About Me</title>
 </head>
 <body>
-  <aside class="side-bar">
-    <div class="drop-cap">
-      <a href="index.html" class="drop-cap__text">D</a>
-    </div>
-    <!--! this will open the nav-menu so maybe it should be outside the nav-menu? -->
+  <a id="mobile-menu" href="#side-menu">
     <button class="burger-container">
-      <div class="burger-container__icon">
-      </div>
+      <div class="burger-container__icon"></div>
     </button>
-    <nav class="nav-menu">
-      <ul class="nav-menu__list">
-        <li class="nav-menu__item">
-          <a class="nav-menu__link" href="#" rel="noopener noreferrer">About</a>
-        </li>
-        <li class="nav-menu__item">
-          <a class="nav-menu__link" href="index.html#projects" rel="noopener noreferrer">Portfolio</a>
-        </li>
-        <li class="nav-menu__item">
-          <a class="nav-menu__link" href="coding-examples.html" rel="noopener noreferrer">Coding Examples</a>
-        </li>
-        <li class="nav-menu__item">
-          <a class="nav-menu__link" href="scs-scheme.html" rel="noopener noreferrer">SCS Scheme</a>
-        </li>
-        <li class="nav-menu__item">
-          <a class="nav-menu__link" href="index.html#form" rel="noopener noreferrer">Contact</a>
-        </li>
-        <li class="nav-menu__item--social">
+  </a>
+  <div id="side-menu">
+    <aside class="side-bar">
+      <div class="drop-cap">
+        <a href="index.html#hero-image" class="drop-cap__text">DM</a>
+      </div>
+      
+      <div class="close-sidr">Close</div>
 
-          <ul class="nav-menu__social-list">
-            <li class="nav-menu__social-item">
-              <a class="nav-menu__social-link" href="#" rel="noopener noreferrer">
-                <span class="nav-menu__social-icon nav-menu__social-icon--github"></span>
-              </a>
-            </li>
-            <li class="nav-menu__social-item">
-              <a class="nav-menu__social-link" href="#" rel="noopener noreferrer">
-                <span class="nav-menu__social-icon nav-menu__social-icon--linkedin"></span>
-              </a>
-            </li>
-          </ul>
-
-        </li>
-      </ul>
-
-    </nav>
-  </aside>
+      <nav class="nav-menu">
+        <ul class="nav-menu__list">
+          <li class="nav-menu__item">
+            <a class="nav-menu__link" href="about.html" rel="noopener noreferrer">About</a>
+          </li>
+          <li class="nav-menu__item">
+            <a class="nav-menu__link" href="#projects" rel="noopener noreferrer">Portfolio</a>
+          </li>
+          <li class="nav-menu__item">
+            <a class="nav-menu__link" href="coding-examples.html" rel="noopener noreferrer">Coding Examples</a>
+          </li>
+          <li class="nav-menu__item">
+            <a class="nav-menu__link" href="scs-scheme.html" rel="noopener noreferrer">SCS Scheme</a>
+          </li>
+          <li class="nav-menu__item">
+            <a class="nav-menu__link" href="#form" rel="noopener noreferrer">Contact</a>
+          </li>
+          <li class="nav-menu__item--social">
+            <ul class="nav-menu__social-list">
+              <li class="nav-menu__social-item">
+                <a class="nav-menu__social-link" href="#" rel="noopener noreferrer">
+                  <span class="nav-menu__social-icon nav-menu__social-icon--github"></span>
+                </a>
+              </li>
+              <li class="nav-menu__social-item">
+                <a class="nav-menu__social-link" href="#" rel="noopener noreferrer">
+                  <span class="nav-menu__social-icon nav-menu__social-icon--linkedin"></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
 
   <div class="content-adjust container">About me goes here</div>
+  <script src="javascript/jquery-4.0.0.min.js"></script>
+  <script src="javascript/jquery.sidr.min.js"></script>
+  <script src="javascript/main.js"></script>
 </body>
 </html>
