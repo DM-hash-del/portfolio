@@ -109,8 +109,8 @@
     content: "";
     position: absolute;
     right: -10px;
-    height: 70px;
-    top: 11px;
+    height: 21px;
+    top: 10px;
     border-right: 5px solid ab.color(font-light);
     animation: blink 1.3s step-end infinite;
     @content;
@@ -118,7 +118,17 @@
 }
 
 .tw-bar {
-  @include type-bar;
+  @include type-bar{
+    @include ab.respond(s) {
+      height: 36px;
+    }
+    @include ab.respond(l) {
+      height: 69px;
+    }
+    @include ab.respond(xl) {
+      height: 70px;
+    }
+  };
 }
 
 @keyframes blink {

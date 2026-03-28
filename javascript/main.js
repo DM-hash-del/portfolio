@@ -47,9 +47,13 @@ $(document).ready(function() {
   setTimeout(() => {
     startTypeWriter($(".hero__title"), devTitle, 90)
       .then(() => { 
-        setTimeout(() => { startTypeWriter($(".hero__excerpt--small"), devDescription, 90)}, 1000);
+        setTimeout(() => {
+          $(".hero__title").removeClass("tw-bar");
+          startTypeWriter($(".hero__excerpt--small"), devDescription, 90)
+        }, 1000);
       });
   }, 1500);
+  
 });
 
 
@@ -59,7 +63,6 @@ function startTypeWriter(el, str, delay) {
     let increment = 0;
     function nextChar() {
       if (increment >= str.length) {
-        $(".hero__title").removeClass("tw-bar");
         return res();
       } else {
         el.text(str.slice(0, increment + 1));
