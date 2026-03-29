@@ -46,17 +46,26 @@
     flex: 0 0 75%;
   }
 
-  &__scroll--2 {
-    position: absolute;
-    margin: 0 auto 0;
-    bottom: 34px;
-    @include ab.icon(circle-left, after) {
-      display: inline-block;
-      position: absolute;
-      transform: rotate(90deg);
-      left: 25px;
-      bottom: 20px;
-      color: inherit;
+  &__scroll {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 50px;
+    color: ab.color(font-dark);
+    text-align: center;
+    margin-top: auto;
+    &--icon {
+      @include ab.icon(circle-left, after) {
+        display: inline-block;
+        position: absolute;
+        transform: rotate(90deg);
+        left: 45%;
+        bottom: 4px;
+        font-size: 2rem;
+      }
+    }
+    &:visited {
+      color: ab.color(font-dark);
     }
   }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -642,6 +643,7 @@ textarea:focus-visible {
 }
 .hero__wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100dvh;
 }
@@ -651,69 +653,71 @@ textarea:focus-visible {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  margin: auto 0;
   color: #f2f2f2;
 }
 .hero__title {
   position: relative;
+  min-height: 62px;
   text-align: center;
   text-wrap: balance;
-  margin-bottom: 4rem;
-  height: 80px;
-}
-.hero__title strong {
-  display: block;
-  font-size: 1.825rem;
-}
-@media (min-width: 360px) {
-  .hero__title strong {
-    font-size: 2.4rem;
-  }
-}
-@media (min-width: 576px) {
-  .hero__title strong {
-    font-size: 3.5rem;
-  }
-}
-@media (min-width: 768px) {
-  .hero__title strong {
-    font-size: 4.2rem;
-  }
-}
-@media (min-width: 992px) {
-  .hero__title strong {
-    font-size: 5rem;
-  }
-}
-@media (min-width: 1200px) {
-  .hero__title strong {
-    font-size: 4.825rem;
-  }
+  font-size: 2.5rem;
 }
 @media (min-width: 576px) {
   .hero__title {
     font-size: 3.25rem;
-    height: 130px;
   }
 }
 @media (min-width: 768px) {
   .hero__title {
     font-size: 4rem;
-    height: 160px;
+    min-height: 160px;
   }
 }
 @media (min-width: 992px) {
   .hero__title {
     font-size: 4.825rem;
-    height: 190px;
+    min-height: 190px;
   }
 }
 @media (min-width: 1200px) {
   .hero__title {
     font-size: 4rem;
-    height: 80px;
+    min-height: 80px;
+  }
+}
+.hero__name {
+  position: relative;
+  min-height: 62px;
+  font-size: 1.825rem;
+}
+@media (min-width: 360px) {
+  .hero__name {
+    font-size: 2.4rem;
+  }
+}
+@media (min-width: 576px) {
+  .hero__name {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero__name {
+    font-size: 4.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero__name {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero__name {
+    font-size: 4.825rem;
   }
 }
 .hero__excerpt {
+  min-height: 32px;
   margin-top: 10px;
   font-size: 2rem;
   margin-bottom: 4rem;
@@ -738,45 +742,38 @@ textarea:focus-visible {
   }
 }
 .hero__scroll {
-  position: absolute;
-  bottom: 30px;
-  left: calc(50% - 44px);
-  margin: 0 auto;
+  display: block;
+  padding-bottom: 50px;
   color: #f2f2f2;
+  text-align: center;
+  margin-top: auto;
 }
-.hero__scroll::after {
+.hero__scroll--icon {
+  position: absolute;
+}
+.hero__scroll--icon::after {
   content: "\ea44";
   font-family: "icomoon" !important;
   display: inline-block;
   position: absolute;
+  font-size: 2rem;
   transform: rotate(-90deg);
-  right: 36px;
+  right: 27px;
   top: 20px;
+}
+.hero__scroll:visited {
+  color: #f2f2f2;
 }
 
 .tw-bar::after {
-  content: "";
+  content: " ";
   position: absolute;
   right: -10px;
-  height: 21px;
-  top: 10px;
-  border-right: 5px solid #f2f2f2;
+  font-size: inherit;
+  border-right: 3px solid #f2f2f2;
   animation: blink 1.3s step-end infinite;
-}
-@media (min-width: 576px) {
-  .tw-bar::after {
-    height: 36px;
-  }
-}
-@media (min-width: 992px) {
-  .tw-bar::after {
-    height: 69px;
-  }
-}
-@media (min-width: 1200px) {
-  .tw-bar::after {
-    height: 70px;
-  }
+  top: 6px;
+  height: 1.1em;
 }
 
 @keyframes blink {
@@ -828,20 +825,27 @@ textarea:focus-visible {
 .contact__form {
   flex: 0 0 75%;
 }
-.contact__scroll--2 {
-  position: absolute;
-  margin: 0 auto 0;
-  bottom: 34px;
+.contact__scroll {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 50px;
+  color: #111;
+  text-align: center;
+  margin-top: auto;
 }
-.contact__scroll--2::after {
+.contact__scroll--icon::after {
   content: "\ea44";
   font-family: "icomoon" !important;
   display: inline-block;
   position: absolute;
   transform: rotate(90deg);
-  left: 25px;
-  bottom: 20px;
-  color: inherit;
+  left: 45%;
+  bottom: 4px;
+  font-size: 2rem;
+}
+.contact__scroll:visited {
+  color: #111;
 }
 
 .project-cards {

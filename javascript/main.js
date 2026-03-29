@@ -1,6 +1,7 @@
 // ? Sometimes no-scroll works, sometimes it doesn't?!
 // let currentScrollPosition = 0;
-const devTitle = "My name is David Mackie";
+const devTitle = "My name is ";
+const devName = "David Mackie";
 const devDescription = "I am a web developer";
 
 // console.log($(".hero__title").text().length)
@@ -44,20 +45,22 @@ $(document).ready(function() {
     }
   });
 
-  setTimeout(() => {
-    startTypeWriter($(".hero__title"), devTitle, 90)
-      .then(() => { 
-        setTimeout(() => {
-          $(".hero__title").removeClass("tw-bar");
-          startTypeWriter($(".hero__excerpt--small"), devDescription, 90)
-        }, 1000);
-      });
-  }, 1500);
-  
+  // setTimeout(() => {
+  //   startTypeWriter($(".hero__title"), devTitle, 90)
+  //     .then(() => { 
+  //       setTimeout(() => {
+  //         $(".hero__title").removeClass("tw-bar");
+  //         startTypeWriter($(".hero__excerpt--small"), devDescription, 90)
+  //       }, 1000);
+  //     });
+  // }, 1500);
+
+  writeAnimation(90);
+
 });
 
 
-function startTypeWriter(el, str, delay) {
+function typeWriter(el, str, delay) {
   el.addClass("tw-bar");
   return new Promise((res) => {
     let increment = 0;
@@ -72,4 +75,14 @@ function startTypeWriter(el, str, delay) {
     };
     nextChar();
   });
+};
+
+async function writeAnimation(delay) {
+  await typeWriter($(".hero__title"), devTitle, delay);
+  await new Promise(res => setTimeout(res, 750) );
+  $(".hero__title").removeClass("tw-bar")
+  await typeWriter($(".hero__name"), devName, delay);
+  await new Promise(res => setTimeout(res, 750) );
+  $(".hero__name").removeClass("tw-bar")
+  await typeWriter($(".hero__excerpt--small"), devDescription, delay);
 };

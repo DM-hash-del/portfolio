@@ -11,6 +11,7 @@
 
   &__wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     height: 100dvh;
   }
@@ -21,55 +22,57 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    margin: auto 0;
     color: ab.color(font-light);
   }
 
   &__title {
     position: relative;
+    min-height: 62px;
     text-align: center;
     text-wrap: balance;
-    // line-height: 1.2;
-    margin-bottom: 4rem;
-
-    height: 80px;
-
-    & strong {
-      display: block;
-      font-size: 1.825rem;
-      @media (min-width: 360px) {
-        font-size: 2.4rem;
-      }
-      @include ab.respond(s) {
-        font-size: 3.5rem;
-      }
-      @include ab.respond(m) {
-        font-size: 4.2rem;
-      }
-      @include ab.respond(l) {
-        font-size: 5rem;
-      }
-      @include ab.respond(xl) {
-        font-size: 4.825rem;
-      }
-    }
+    font-size: 2.5rem;
     @include ab.respond(s) {
       font-size: 3.25rem;
-      height: 130px;
+      // height: 130px;
     }
     @include ab.respond(m) {
       font-size: 4rem;
-      height: 160px;
+      min-height: 160px;
     }
     @include ab.respond(l) {
       font-size: 4.825rem;
-      height: 190px;
+      min-height: 190px;
     }
     @include ab.respond(xl) {
       font-size: 4rem;
-      height: 80px;
+      min-height: 80px;
     }
   }
+
+  &__name {
+    position: relative;
+    min-height: 62px;
+    font-size: 1.825rem;
+    @media (min-width: 360px) {
+      font-size: 2.4rem;
+    }
+    @include ab.respond(s) {
+      font-size: 3.5rem;
+    }
+    @include ab.respond(m) {
+      font-size: 4.2rem;
+    }
+    @include ab.respond(l) {
+      font-size: 5rem;
+    }
+    @include ab.respond(xl) {
+      font-size: 4.825rem;
+    }
+  }
+
   &__excerpt {
+    min-height: 32px;
     margin-top: 10px;
     font-size: 2rem;
     margin-bottom: 4rem;
@@ -89,45 +92,46 @@
   }
 
   &__scroll {
-    position: absolute;
-    bottom: 30px;
-    left: calc(50% - 44px);
-    margin: 0 auto;
+    display: block;
+    padding-bottom: 50px;
     color: ab.color(font-light);
-    @include ab.icon(circle-left, after) {
-      display: inline-block;
+    text-align: center;
+    margin-top: auto;
+    &--icon {
       position: absolute;
-      transform: rotate(-90deg);
-      right: 36px;
-      top: 20px;
+      @include ab.icon(circle-left, after) {
+        display: inline-block;
+        position: absolute;
+        font-size: 2rem;
+        transform: rotate(-90deg);
+        right: 27px;
+        top: 20px;
+      }
+    }
+    &:visited {
+      color: ab.color(font-light);
     }
   }
 }
 
 @mixin type-bar {
   &::after {
-    content: "";
+    content: "\A0";
     position: absolute;
     right: -10px;
-    height: 21px;
-    top: 10px;
-    border-right: 5px solid ab.color(font-light);
+    font-size: inherit;
+    border-right: 3px solid ab.color(font-light);
     animation: blink 1.3s step-end infinite;
+
+    top: 6px;
+    // height: 100%;
+    height: 1.1em;
     @content;
   }
 }
 
 .tw-bar {
   @include type-bar{
-    @include ab.respond(s) {
-      height: 36px;
-    }
-    @include ab.respond(l) {
-      height: 69px;
-    }
-    @include ab.respond(xl) {
-      height: 70px;
-    }
   };
 }
 
