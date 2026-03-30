@@ -121,32 +121,28 @@
     <!-- CONTACT FORM -->
     <section id="form" class="contact">
       <div class="container">
-
         <div class="contact__container">
-          <div class="contact__info">
-            <h2 class="contact__title">Get In Touch</h2>
-            <p class="contact__excerpt">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro perferendis voluptatum aliquam praesentium doloremque?</p>
-            <!-- Should be naturally concerned with what text should/can go here -->
-          </div>
-
           <h2 class="contact__title">Get In Touch</h2>
 
-          <form class="form contact__form" action="" method="post">
-
-            <!-- maybe use a fieldset + legend? -->
-            <div class="contact__field">
+          <form class="contact__form" action="" method="post">
+            <div class="contact__field contact__field--half">
               <label class="contact__label u-visually-hidden" for="first-name">First Name</label>
               <input class="contact__input" type="text" name="first-name" id="first-name" placeholder="First Name*" required>
             </div>
             
-            <div class="contact__field">
+            <div class="contact__field contact__field--half">
               <label class="contact__label u-visually-hidden" for="last-name">Last Name</label>
-              <input class="contact__input" type="text" name="last-name" id="last-name" placeholder="last Name*" required>
+              <input class="contact__input" type="text" name="last-name" id="last-name" placeholder="Last Name*" required>
             </div>
             
-            <div class="contact__field">
+            <div class="contact__field contact__field--half">
               <label class="contact__label u-visually-hidden" for="email">Email</label>
               <input class="contact__input" type="email" name="email" id="email" placeholder="Email Address*" required>
+            </div>
+
+            <div class="contact__field contact__field--half">
+              <label class="contact__label u-visually-hidden" for="phone">Contact Phone</label>
+              <input class="contact__input" type="tel" name="phone" id="phone" placeholder="e.g., +1 555-123-4567 or 020 1234 5678" titled="Enter a valid international or local phone number">
             </div>
             
             <div class="contact__field">
@@ -156,21 +152,16 @@
             
             <div class="contact__field">
               <label class="contact__label u-visually-hidden" for="contact-message">Message</label>
-              <textarea class="contact__textarea" name="contact-message" id="contact-message" cols="30" rows="10"></textarea>
+              <textarea class="contact__input contact__input--textarea" name="contact-message" id="contact-message" cols="30" rows="10" placeholder="Your Message...*"></textarea>
             </div>
 
             <button class="contact__submit-btn" type="submit">Submit</button>
-
-            <!-- <div class="contact__scroll">
-              <a href="#hero-image">Scroll Up</a>
-            </div> -->
           </form>
+          
           <a class="contact__scroll" href="#hero-image">Scroll Up<span class="contact__scroll--icon"></span></a>
         </div>
-
       </div>
     </section>
-
 
   </main>
   <script src="javascript/jquery-4.0.0.min.js"></script>

@@ -98,22 +98,23 @@ select {
   color: inherit;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="url"],
-textarea {
-  border: none;
-  outline: none;
-  background: none;
-}
+// Removed to bug test why validation styles not being applied
+// input[type="text"],
+// input[type="email"],
+// input[type="password"],
+// input[type="search"],
+// input[type="tel"],
+// input[type="url"],
+// textarea {
+//   border: none;
+//   outline: none;
+//   background: none;
+// }
 
 // Accessibility
 input:focus-visible,
 textarea:focus-visible {
-  outline: 1px dashed currentColor;
+  // outline: 1px dashed currentColor;
   outline-offset: 2px;
   // background-color: ab.color(font-light);
 }

@@ -95,21 +95,8 @@ select {
   color: inherit;
 }
 
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=search],
-input[type=tel],
-input[type=url],
-textarea {
-  border: none;
-  outline: none;
-  background: none;
-}
-
 input:focus-visible,
 textarea:focus-visible {
-  outline: 1px dashed currentColor;
   outline-offset: 2px;
 }
 
@@ -281,129 +268,112 @@ textarea:focus-visible {
   top: 1px;
 }
 
-.contact {
-  position: relative;
-}
-@media (min-width: 576px) {
-  .contact__container > .contact__title {
-    display: none;
-  }
-}
-.contact__info {
-  gap: 15px;
-  margin-bottom: 10px;
-}
-.contact__excerpt {
-  text-align: center;
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #ddd;
+  border-radius: 0 0 8px 8px;
+  margin: 35px 0 15px 0;
+  padding: 2rem;
 }
 .contact__title {
   font-size: 2.25rem;
   font-weight: 900;
-}
-@media (min-width: 1200px) {
-  .contact__title {
-    text-align: left;
-  }
+  margin-bottom: 2rem;
 }
 .contact__form {
   display: grid;
-  grid-template-columns: repeat(1, minmax(60px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   width: 100%;
-  padding: 0 5px 65px;
-}
-@media (min-width: 576px) {
-  .contact__form {
-    grid-template-columns: repeat(6, minmax(60px, 1fr));
-  }
-}
-@media (min-width: 1200px) {
-  .contact__form {
-    grid-template-columns: repeat(8, minmax(60px, 1fr));
-  }
+  max-width: 800px;
 }
 .contact__field {
-  grid-column: 1/-1;
+  grid-column: span 2;
 }
-@media (min-width: 576px) {
-  .contact__field {
-    grid-column: 2/6;
-  }
+.contact__field--half {
+  grid-column: span 2;
 }
 @media (min-width: 768px) {
-  .contact__field:nth-child(1) {
-    grid-column: 2/-4;
-  }
-  .contact__field:nth-child(2) {
-    grid-column: 4/-2;
+  .contact__field--half {
+    grid-column: span 1;
   }
 }
-@media (min-width: 1200px) {
-  .contact__field {
-    grid-template-columns: repeat(6, minmax(120px, 1fr));
-  }
-  .contact__field:nth-child(1) {
-    grid-column: 2/-5;
-  }
-  .contact__field:nth-of-type(2) {
-    grid-column: 5/-2;
-  }
-  .contact__field:nth-of-type(3) {
-    grid-column: 2/-2;
-  }
-  .contact__field:nth-of-type(4) {
-    grid-column: 2/-2;
-  }
-  .contact__field:nth-of-type(5) {
-    grid-column: 2/-2;
-  }
-}
-.contact__textarea {
+.contact__input {
   width: 100%;
-  padding: 5px 15px;
+  padding: 12px 15px;
+  font-size: 1.125rem;
   background-color: #ddd;
-  border: 1px solid #111;
+  border: 1px solid transparent;
   box-shadow: inset 0px 0px 2px 1px rgba(17, 17, 17, 0.2);
+  transition: all 0.3s ease;
 }
-.contact__textarea:focus {
+.contact__input:focus {
+  outline: none;
   background-color: #f2f2f2;
+  border-color: #d7f4b4;
+}
+.contact__input--textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+.contact__input--valid {
+  border-color: #28a745 !important;
+}
+.contact__input--invalid {
+  border-color: #dc3545 !important;
 }
 .contact__submit-btn {
+  grid-column: span 2;
+  justify-self: center;
   width: fit-content;
+  padding: 0.5rem 2rem;
+  border: 1px solid #111;
   font-size: 1.825rem;
   font-weight: 600;
-  padding: 0 10px 0;
-  border: 1px solid #111;
-  margin: 0 auto;
-  grid-column: 1/-1;
-}
-@media (min-width: 576px) {
-  .contact__submit-btn {
-    grid-column: 2/6;
-  }
-}
-@media (min-width: 1200px) {
-  .contact__submit-btn {
-    grid-column: 2/-6;
-    margin: 0;
-  }
+  cursor: pointer;
+  transition: background 0.3s;
 }
 .contact__submit-btn:hover {
   background-color: #111;
   color: #f2f2f2;
 }
-
-.form input[class^=contact] {
-  font-size: 1.125rem;
-  line-height: 1.5;
-  width: 100%;
-  padding: 5px 15px;
-  background-color: #ddd;
-  border: 1px solid #111;
-  box-shadow: inset 0px 0px 2px 1px rgba(17, 17, 17, 0.2);
+@media (min-width: 1200px) {
+  .contact__submit-btn {
+    justify-self: auto;
+  }
 }
-.form input[class^=contact]:focus-visible, .form input[class^=contact] textarea:focus-visible {
-  background-color: #f2f2f2;
+.contact__scroll {
+  display: block;
+  position: relative;
+  width: 50%;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  color: #111;
+  text-align: center;
+  margin-top: auto;
+}
+.contact__scroll--icon::after {
+  content: "\ea44";
+  font-family: "icomoon" !important;
+  display: inline-block;
+  position: absolute;
+  transform: rotate(90deg);
+  translate: -48px 17px;
+  font-size: 2rem;
+}
+.contact__scroll:visited {
+  color: #111;
+}
+
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .nav-menu__list {
@@ -781,73 +751,6 @@ textarea:focus-visible {
     opacity: 0;
   }
 }
-.contact {
-  position: relative;
-  padding-bottom: 10px;
-}
-.contact__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 35px 0 15px 0;
-  border: 2px solid #ddd;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0px 9px 13px 0px rgba(17, 17, 17, 0.4);
-}
-@media (min-width: 1200px) {
-  .contact__container {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 20px;
-  }
-}
-.contact__info {
-  display: none;
-  text-align: center;
-}
-@media (min-width: 576px) {
-  .contact__info {
-    display: block;
-  }
-}
-@media (min-width: 1200px) {
-  .contact__info {
-    align-self: flex-start;
-    flex: 0 0 25%;
-  }
-}
-@media (min-width: 1200px) {
-  .contact__excerpt {
-    text-align: left;
-  }
-}
-.contact__form {
-  flex: 0 0 75%;
-}
-.contact__scroll {
-  display: block;
-  position: relative;
-  width: 100%;
-  padding-bottom: 50px;
-  color: #111;
-  text-align: center;
-  margin-top: auto;
-}
-.contact__scroll--icon::after {
-  content: "\ea44";
-  font-family: "icomoon" !important;
-  display: inline-block;
-  position: absolute;
-  transform: rotate(90deg);
-  left: 45%;
-  bottom: 4px;
-  font-size: 2rem;
-}
-.contact__scroll:visited {
-  color: #111;
-}
-
 .project-cards {
   margin: 40px 0;
 }
@@ -906,8 +809,10 @@ textarea:focus-visible {
   }
 }
 
-.contact {
-  padding-bottom: 100px;
+.coding__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 500px;
 }
 
 pre {
@@ -917,6 +822,8 @@ pre {
   margin: 20px 0;
   border-radius: 8px;
   overflow-x: auto;
+  height: 450px;
+  overflow-y: scroll;
 }
 
 code {

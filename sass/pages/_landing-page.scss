@@ -5,36 +5,10 @@
 
 .page {
   background-color: ab.color(font-light);
-  // padding-left: ab.sidebar-width(1);
-  // width: calc(100% - #{ab.sidebar-width(1)});
-  // scroll-snap-type: proximity;
   scroll-behavior: smooth;
-
-  // ! Removed bc sidr
-  // @include ab.respond(s) {
-  //   padding-left: ab.sidebar-width(2);
-  // }
-
-  // @include ab.respond(m) {
-  //   padding-left: ab.sidebar-width(3);
-  // }
-
-  // @include ab.respond(l) {
-  //   padding-left: ab.sidebar-width(4);
-  // }
 
   @include ab.respond(xl) {
     // ! don't need this unless you keep the sidebar on the side !
     padding-left: ab.sidebar-width(5);
-    // padding-left: 0;
   }
-}
-
-// .hero,
-// .contact {
-//   scroll-snap-align: start;
-// }
-
-.contact {
-  padding-bottom: 100px;
 }

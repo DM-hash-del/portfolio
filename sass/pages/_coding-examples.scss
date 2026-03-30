@@ -1,3 +1,12 @@
+@use "../abstracts" as ab;
+
+.coding__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 500px;
+}
+
+
 pre {
   background: #1e1e1e;
   color: #dcdcdc;
@@ -5,6 +14,9 @@ pre {
   margin: 20px 0;
   border-radius: 8px;
   overflow-x: auto;
+
+  height: 450px;
+  overflow-y: scroll;
 }
 
 code {
