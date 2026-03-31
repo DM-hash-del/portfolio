@@ -1,24 +1,38 @@
 @use "../abstracts" as ab;
 
-.coding__grid {
+.code-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 500px;
+  gap: 1rem;
+  align-items: start;
+  @include ab.respond(xl) {
+    padding-left: ab.sidebar-width(5);
+  }
 }
 
-
-pre {
-  background: #1e1e1e;
-  color: #dcdcdc;
-  padding: 16px;
-  margin: 20px 0;
-  border-radius: 8px;
-  overflow-x: auto;
-
-  height: 450px;
-  overflow-y: scroll;
-}
-
-code {
-  font-family: monospace;
+.code-example {
+  &:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+  &__header {
+    padding: 15px 20px;
+    margin-top: 50px;
+  }
+  &__title--main {
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: right;
+    @include ab.respond(s) {
+      text-align: center;
+    }
+    @include ab.respond(l) {
+      font-size: 3.5rem;
+    }
+  }
+  &__text--header {
+    text-align: center;
+    @include ab.respond(l) {
+      font-size: 2rem;
+    }
+  }
 }

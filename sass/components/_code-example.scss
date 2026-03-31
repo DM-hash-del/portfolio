@@ -1,0 +1,166 @@
+@use "../abstracts" as ab;
+$elem_width_s: 350px;
+$elem_width_l: 450px;
+$elem_width_xl: 395px;
+
+code {
+  font-family: monospace;
+}
+
+.code-example {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 2px solid ab.color(primary-dark);
+  @include ab.respond(m) {
+    align-items: center;
+  }
+  @include ab.respond(l) {
+    margin-bottom: 40px;
+  }
+  @include ab.respond(xl) {
+    padding-bottom: 25px;
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+
+  &__description {
+    width: $elem_width_s;
+    @include ab.respond(m) {
+      margin-right: 30px;
+    }
+    @include ab.respond(l) {
+      width: $elem_width_l;
+      display: flex;
+      flex-direction: column;
+      height: 530px;
+    }
+    @include ab.respond(xl) {
+      width: $elem_width_xl;
+    }
+  }
+
+  &__title {
+    font-size: xx-large;
+    padding-left: 15px;
+  }
+
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0 0 15px 10px;
+    @include ab.respond(l) {
+      margin-top: 15px;
+    }
+  }
+  
+  &__tags > span {
+    font-size: .825rem;
+    font-weight: ab.$weight-regular;
+    padding: 0 8px;
+    border: 1px solid ab.color(primary-light);
+    border-radius: 8px;
+    margin-right: 4px;
+    &:hover {
+      background-color: ab.color(primary-dark);
+      color: ab.color(font-light);
+    }
+  }
+
+  &__text {
+    font-size: .825rem;
+    font-weight: ab.$weight-bold;
+    padding: 10px 15px 0;
+    &:first-of-type::first-letter {
+      font-size: 1.25em;
+      letter-spacing: 1px;
+      color: ab.color(primary-dark);
+    }
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      @include ab.respond(l) {
+        margin-bottom: auto;
+      }
+    }
+    @include ab.respond(m) {
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+    @include ab.respond(l) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__project-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 65px;
+    @include ab.respond(m) {
+      justify-content: center;
+      padding: 0;
+      margin-top: 15px;
+    }
+    @include ab.respond(xl) {
+      justify-content: flex-start;
+      padding-left: 15px;
+    }
+  }
+
+  &__project-link > a {
+    position: relative;
+    @include ab.icon(arrow-right, after){
+      position: absolute;
+      margin-left: 10px;
+      color: ab.color(font-dark);
+    };
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    @include ab.respond(m){
+      font-size: 1.5rem;
+    }
+  }
+
+  &__code-container {
+    margin: 20px 0;
+  }
+
+  &__code-block {
+    background: #1e1e1e;
+    color: #dcdcdc;
+    padding: 16px;
+    border-radius: 8px;
+    min-width: 0;
+    min-height: 0;
+    height: 400px;
+    width: $elem_width_s;
+    overflow-x: auto;
+    overflow-y: scroll;
+    & > code {
+      background: #1e1e1e !important;
+      @include ab.respond(l) {
+        font-size: 1.2rem;
+      }
+      @include ab.respond(xl) {
+        overflow: auto;
+        display: block;
+        width: max-content;
+        min-width: 100%;
+      }
+    }
+    @include ab.respond(m){
+      height: 530px;
+    }
+    @include ab.respond(l) {
+      width: $elem_width_l;
+    }
+  }
+}
+
