@@ -38,7 +38,7 @@
     }
     @include ab.respond(m) {
       font-size: 4rem;
-      min-height: 160px;
+      // min-height: 160px;
     }
     @include ab.respond(l) {
       font-size: 4.825rem;
