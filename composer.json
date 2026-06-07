@@ -1,0 +1,17 @@
+{
+    "name": "macki/portfolio",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "DM-hash-del",
+            "email": "mackiedavidyt@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
