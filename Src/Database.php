@@ -25,4 +25,14 @@ class Database
 
     return $this;
   }
-}
+
+  public function connectionTest()
+  {
+    return $this->connection->getAttribute(PDO::ATTR_CONNECTION_STATUS);
+  }
+
+  public function findAll()
+  {
+    return $this->statement->fetchAll();
+  }
+} 

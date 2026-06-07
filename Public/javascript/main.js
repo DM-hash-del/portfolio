@@ -3,6 +3,7 @@
 $(window).ready(function() {
 
   // call plugin on element => specify which element to control
+  // --------------------------------------------------------
   $("#mobile-menu").sidr({
     name: "side-menu", // useful if trigger ins't <a> => <button> | <div>
     side: "left",
@@ -23,18 +24,21 @@ $(window).ready(function() {
   
 
   // Side-menu close button
+  // --------------------------------------------------------
   $(".close-sidr").on('click', () => {
     $.sidr("close", "side-menu");
   });
   
 
   // Link specific behavior for side-menu links
+  // --------------------------------------------------------
   $("#side-menu").on("click", "a[href^='#']", function() {
     $.sidr("close", "side-menu");
   });
 
 
   // Basic click check for outside side-menu to close side-menu
+  // --------------------------------------------------------
   $(window).on("click", function(event) {
     let clickedBurger = $(event.target).closest(".burger-container").length > 0;
     let clickedSidemenu = $(event.target).closest(".side-bar").length > 0;
@@ -55,9 +59,13 @@ $(window).ready(function() {
   //       }, 1000);
   //     });
   // }, 1500);
+  // ! Wtf does this number even mean?!?!?!?!
+  // ! are you stupid? Make some constants
   writeAnimation(90);
 
 
+  // Handles validation for Contact Form Inputs
+  // --------------------------------------------------------
   function validateInput($input) {
     // These are not the original regex patterns, adapted for JS
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -92,12 +100,26 @@ $(window).ready(function() {
     return isvalid;
   };
 
-
+  // Validates Contact Form Inputs on Blur
+  // --------------------------------------------------------
   $(".contact__input").on("blur", function() {
-    validateInput($(this))
+    validateInput($(this));
   });
 
+  // Handles the Contact Form Notification Element State
+  // --------------------------------------------------------
+  function showNotification(type, message) {
+  const $n = $(".contact__notification");
 
+  $n.removeClass("contact__notification--success contact__notification--error contact__notification")
+    .addClass(`contact__notification--${type}`)
+    .find("p")
+    .text(message);
+  }
+
+
+  // Handle Contact Form submission
+  // --------------------------------------------------------
   $(".contact__form").on("submit", function(e) {
     let formIsValid = true;
     // loop through each input element and check validity
@@ -108,11 +130,31 @@ $(window).ready(function() {
       }
     })
     e.preventDefault();
+    const formData = new FormData(this);
+    console.log("formData: ", [...formData.entries()]);
+
+    fetch('/process', {
+      method: 'POST',
+      body: formData
+    }).then(response => {
+      if(!response) {
+        return response.json().then(err => { throw err; });
+      }
+      return response.json();
+    }).then(data => {
+      console.log(data['status']);
+      if (data['status'] === 'success') {
+        showNotification(data['status'], data['message']);
+      }
+    }).catch(err => {
+      console.log(err.message);
+    })
   })
 });
 
 
 // Animation function, per-string.
+// --------------------------------------------------------
 function typeWriter(el, str, delay) {
   el.addClass("tw-bar");
   // Once the recursion is done return promise => chain
@@ -133,6 +175,7 @@ function typeWriter(el, str, delay) {
 
 
 // Hero-image Title and Description Animation
+// --------------------------------------------------------
 async function writeAnimation(delay) {
   const devTitle = "My name is ";
   const devName = "David Mackie";

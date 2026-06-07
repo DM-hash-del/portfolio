@@ -268,6 +268,36 @@ textarea:focus-visible {
   top: 1px;
 }
 
+.contact__notification--success {
+  display: block;
+  width: fit-content;
+  padding: 5px 15px;
+  border: 2px solid #6cb01a;
+  border-radius: 4px;
+  margin-block-end: 2rem;
+}
+.contact__notification--success > p {
+  font-size: 1.125rem;
+  color: #000;
+}
+
+.contact__notification--error {
+  display: block;
+  width: fit-content;
+  padding: 5px 15px;
+  border: 2px solid rgba(255, 0, 0, 0.7);
+  border-radius: 4px;
+  margin-block-end: 2rem;
+}
+.contact__notification--error > p {
+  font-size: 1.125rem;
+  color: #000;
+}
+
+.contact__notification {
+  display: none;
+}
+
 .contact__container {
   display: flex;
   flex-direction: column;
@@ -827,13 +857,11 @@ code {
 @media (min-width: 768px) {
   .hero__title {
     font-size: 4rem;
-    min-height: 160px;
   }
 }
 @media (min-width: 992px) {
   .hero__title {
     font-size: 4.825rem;
-    min-height: 190px;
   }
 }
 @media (min-width: 1200px) {

@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/sidr.bare.css">
-  <link rel="stylesheet" href="css/main.css">
-  <title>About Me</title>
-</head>
-<body>
-  
   <a id="mobile-menu" href="#side-menu">
     <button class="burger-container">
       <div class="burger-container__icon"></div>
@@ -17,7 +6,7 @@
   <div id="side-menu">
     <aside class="side-bar">
       <div class="drop-cap">
-        <a href="index.html#hero-image" class="drop-cap__text">DM</a>
+        <a href="/" class="drop-cap__text">DM</a>
       </div>
       
       <div class="close-sidr">Close</div>
@@ -25,19 +14,19 @@
       <nav class="nav-menu">
         <ul class="nav-menu__list">
           <li class="nav-menu__item">
-            <a class="nav-menu__link" href="about.html" rel="noopener noreferrer">About</a>
+            <a class="nav-menu__link" href="/about" rel="noopener noreferrer">About</a>
           </li>
           <li class="nav-menu__item">
-            <a class="nav-menu__link" href="#projects" rel="noopener noreferrer">Portfolio</a>
+            <a class="nav-menu__link" href="/#projects" rel="noopener noreferrer">Portfolio</a>
           </li>
           <li class="nav-menu__item">
-            <a class="nav-menu__link" href="coding-examples.html" rel="noopener noreferrer">Coding Examples</a>
+            <a class="nav-menu__link" href="/coding-examples" rel="noopener noreferrer">Coding Examples</a>
           </li>
           <li class="nav-menu__item">
-            <a class="nav-menu__link" href="scs-scheme.html" rel="noopener noreferrer">SCS Scheme</a>
+            <a class="nav-menu__link" href="/scs-scheme" rel="noopener noreferrer">SCS Scheme</a>
           </li>
           <li class="nav-menu__item">
-            <a class="nav-menu__link" href="#form" rel="noopener noreferrer">Contact</a>
+            <a class="nav-menu__link" href="/#form" rel="noopener noreferrer">Contact</a>
           </li>
           <li class="nav-menu__item--social">
             <ul class="nav-menu__social-list">
@@ -57,13 +46,3 @@
       </nav>
     </aside>
   </div>
-
-  <main>
-    <div class="content-adjust container">About me goes here</div>
-  </main>
-
-  <script src="javascript/jquery-4.0.0.min.js"></script>
-  <script src="javascript/jquery.sidr.min.js"></script>
-  <script src="javascript/main.js"></script>
-</body>
-</html>

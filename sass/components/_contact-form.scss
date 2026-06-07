@@ -7,6 +7,35 @@
 //   border: 1px solid red !important;
 // }
 
+.contact__notification--success {
+  display: block;
+  width: fit-content;
+  padding: 5px 15px;
+  border: 2px solid ab.color(primary-dark);
+  border-radius: 4px;
+  margin-block-end: 2rem;
+  & > p {
+    font-size: 1.125rem;
+    color: #000;
+  }
+}
+.contact__notification--error {
+  display: block;
+  width: fit-content;
+  padding: 5px 15px;
+  border: 2px solid rgba($color: red, $alpha: .7);
+  border-radius: 4px;
+  margin-block-end: 2rem;
+  & > p {
+    font-size: 1.125rem;
+    color: #000;
+  }
+}
+
+.contact__notification {
+  display: none;
+}
+
 .contact {
   &__container {
     display: flex;
@@ -31,7 +60,8 @@
     gap: 1.5rem;
     width: 100%;
     max-width: 800px;
-  }
+    }
+  
 
   &__field {
     // Default: fields take up the full width (both columns)
