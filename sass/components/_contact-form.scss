@@ -7,36 +7,22 @@
 //   border: 1px solid red !important;
 // }
 
-.contact__notification--success {
-  display: block;
-  width: fit-content;
-  padding: 5px 15px;
-  border: 2px solid ab.color(primary-dark);
-  border-radius: 4px;
-  margin-block-end: 2rem;
-  & > p {
-    font-size: 1.125rem;
-    color: #000;
-  }
-}
-.contact__notification--error {
-  display: block;
-  width: fit-content;
-  padding: 5px 15px;
-  border: 2px solid rgba($color: red, $alpha: .7);
-  border-radius: 4px;
-  margin-block-end: 2rem;
-  & > p {
-    font-size: 1.125rem;
-    color: #000;
-  }
-}
+// ICONS USED FOR ERROR MESSAGES
 
-.contact__notification {
-  display: none;
+li > .material-symbols-rounded {
+  font-size: .9125rem;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24;
+  vertical-align: middle;
 }
 
 .contact {
+  &__bottom-pad {
+    height: 100px;
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -51,6 +37,82 @@
     font-size: 2.25rem;
     font-weight: ab.$weight-thick;
     margin-bottom: 2rem;
+  }
+
+  &__success-msg {
+    width: fit-content;
+    font-size: 1.25rem;
+    margin-block-end: 20px;
+    & p {
+      border: 2px solid green;
+      border-radius: 5px;
+      text-align: center;
+      padding: 5px 20px;
+    }
+  }
+  
+
+  // container for form + error messages
+  &__input-block {
+    display: flex;
+    gap: 2.5rem;
+    width: 100%;
+  }
+
+  // ERROR & INFO BLOCK CONTENT
+  &__info {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    max-width: 25%;
+  }
+  &__details {
+    padding-block-end: 5px;
+    margin-block-end: 25px;
+    box-shadow: 0px 2px 0px 0px black;
+  }
+  &__error-heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-block-end: 10px;
+    // text-decoration: underline;
+    // text-underline-offset: 5px;
+  }
+  &__validation-msg {
+    font-size: .8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-block-end: 8px;
+    // ADD FULL EITHER contact__error-msg(--error|--success)
+    &--error {
+      color: #dc3545;
+    }
+    &--success {
+      color: #28a745;
+    }
+    &--warning {
+      color: #ec992b;
+    }
+    & > p {
+      visibility: hidden;
+      font-size: .825rem;
+      color: #000;
+      text-transform: lowercase;
+      letter-spacing: normal;
+      line-height: .8;
+      &::before {
+        content: "Line_Start";
+        font-family: "Material Symbols Rounded";
+        font-variation-settings: 
+        'FILL' 1,
+        'wght' 100,
+        'GRAD' 1,
+        'opsz' 24;
+        font-size: .5rem;
+        margin-inline-end: 5px;
+      }
+    }
   }
 
   &__form {
@@ -115,8 +177,10 @@
     width: fit-content;
     padding: 0.5rem 2rem;
     border: 1px solid ab.color(font-dark);
+    border-radius: 4px;
     font-size: 1.825rem;
     font-weight: ab.$weight-bold;
+    text-transform: uppercase;
     cursor: pointer;
     transition: background 0.3s;
 
@@ -133,7 +197,7 @@
   &__scroll {
     display: block;
     position: relative;
-    width: 50%;
+    // width: 50%;
     padding-bottom: 30px;
     padding-top: 15px;
     color: ab.color(font-dark);

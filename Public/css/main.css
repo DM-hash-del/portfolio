@@ -268,36 +268,15 @@ textarea:focus-visible {
   top: 1px;
 }
 
-.contact__notification--success {
-  display: block;
-  width: fit-content;
-  padding: 5px 15px;
-  border: 2px solid #6cb01a;
-  border-radius: 4px;
-  margin-block-end: 2rem;
-}
-.contact__notification--success > p {
-  font-size: 1.125rem;
-  color: #000;
+li > .material-symbols-rounded {
+  font-size: 0.9125rem;
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+  vertical-align: middle;
 }
 
-.contact__notification--error {
-  display: block;
-  width: fit-content;
-  padding: 5px 15px;
-  border: 2px solid rgba(255, 0, 0, 0.7);
-  border-radius: 4px;
-  margin-block-end: 2rem;
+.contact__bottom-pad {
+  height: 100px;
 }
-.contact__notification--error > p {
-  font-size: 1.125rem;
-  color: #000;
-}
-
-.contact__notification {
-  display: none;
-}
-
 .contact__container {
   display: flex;
   flex-direction: column;
@@ -311,6 +290,69 @@ textarea:focus-visible {
   font-size: 2.25rem;
   font-weight: 900;
   margin-bottom: 2rem;
+}
+.contact__success-msg {
+  width: fit-content;
+  font-size: 1.25rem;
+  margin-block-end: 20px;
+}
+.contact__success-msg p {
+  border: 2px solid green;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px 20px;
+}
+.contact__input-block {
+  display: flex;
+  gap: 2.5rem;
+  width: 100%;
+}
+.contact__info {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  max-width: 25%;
+}
+.contact__details {
+  padding-block-end: 5px;
+  margin-block-end: 25px;
+  box-shadow: 0px 2px 0px 0px black;
+}
+.contact__error-heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-block-end: 10px;
+}
+.contact__validation-msg {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-block-end: 8px;
+}
+.contact__validation-msg--error {
+  color: #dc3545;
+}
+.contact__validation-msg--success {
+  color: #28a745;
+}
+.contact__validation-msg--warning {
+  color: #ec992b;
+}
+.contact__validation-msg > p {
+  visibility: hidden;
+  font-size: 0.825rem;
+  color: #000;
+  text-transform: lowercase;
+  letter-spacing: normal;
+  line-height: 0.8;
+}
+.contact__validation-msg > p::before {
+  content: "Line_Start";
+  font-family: "Material Symbols Rounded";
+  font-variation-settings: "FILL" 1, "wght" 100, "GRAD" 1, "opsz" 24;
+  font-size: 0.5rem;
+  margin-inline-end: 5px;
 }
 .contact__form {
   display: grid;
@@ -360,8 +402,10 @@ textarea:focus-visible {
   width: fit-content;
   padding: 0.5rem 2rem;
   border: 1px solid #111;
+  border-radius: 4px;
   font-size: 1.825rem;
   font-weight: 600;
+  text-transform: uppercase;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -377,7 +421,6 @@ textarea:focus-visible {
 .contact__scroll {
   display: block;
   position: relative;
-  width: 50%;
   padding-bottom: 30px;
   padding-top: 15px;
   color: #111;

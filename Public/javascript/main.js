@@ -1,3 +1,21 @@
+(function($) {
+    $.fn.invisible = function() {
+        return this.each(function() {
+            $(this).css("visibility", "hidden");
+        });
+    };
+    $.fn.visible = function() {
+        return this.each(function() {
+            $(this).css("visibility", "visible");
+        });
+    };
+}(jQuery));
+
+$("#someElem").invisible();
+// $(`[data-field="first_name"] p`).invisible();
+$('.contact__success-msg p').invisible();
+$("#someOther").visible();
+
 // ? Sometimes no-scroll works, sometimes it doesn't?!
 // let currentScrollPosition = 0;
 $(window).ready(function() {
@@ -63,42 +81,79 @@ $(window).ready(function() {
   // ! are you stupid? Make some constants
   writeAnimation(90);
 
+  // Centralized UI Validator Agent
+  // --------------------------------------------------------
+  function updateFieldUI(fieldName, status, icon, message) {
+    const $li = $(`.contact__notification ul li[data-field="${fieldName}"]`);
+    const $input = $(`[name="${fieldName}"]`);
+    const $iconSpan = $li.find('.material-symbols-rounded');
+    const $msgText = $li.find('p');
+
+    // 1. Reset all state classes on this specific field
+    $li.removeClass('contact__validation-msg--error contact__validation-msg--warning contact__validation-msg--success');
+    $input.removeClass('contact__input--invalid contact__input--valid');
+
+    // 2. Apply classes based on incoming state
+    if (status === 'error') {
+      $li.addClass('contact__validation-msg--error');
+      $input.addClass('contact__input--invalid');
+    } else if (status === 'warning') {
+      $li.addClass('contact__validation-msg--warning');
+      $input.addClass('contact__input--invalid');
+    } else if (status === 'success') {
+      $li.addClass('contact__validation-msg--success');
+      $input.addClass('contact__input--valid');
+    }
+
+    // 3. Set the icon string natively into the scoped span element
+    $iconSpan.text(icon || '');
+
+    // 4. Safely handle paragraph visibility to suppress pseudo-elements when empty
+    if (message && message.trim() !== "") {
+      $msgText.text(message).visible();
+    } else {
+      $msgText.text("").invisible();
+    }
+  }
 
   // Handles validation for Contact Form Inputs
   // --------------------------------------------------------
   function validateInput($input) {
-    // These are not the original regex patterns, adapted for JS
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const phoneRegex = /((?:\+|00)[17](?: |-)?|(?:\+|00)[1-9]\d{0,2}(?: |-)?|(?:\+|00)1-\d{3}(?: |-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |-)[0-9]{3}(?: |-)[0-9]{4})|([0-9]{7}))/;
 
     let isvalid = true;
-    // subject not required, has no value, fix?
     const value = $input.val().trim();
     const isRequired = $input.prop("required");
     const type = $input.attr("type");
+    const fieldName = $input.attr("name");
 
-    // check all input values against types
+    // Local validation parsing rules
     if (isRequired && value === "") {
+      updateFieldUI(fieldName, 'error', 'error', 'Field is required');
       isvalid = false;
     } else if (value !== "") {
-      // false => true => false
       if (type === "email" && !emailRegex.test(value)) {
+        updateFieldUI(fieldName, 'warning', 'fmd_bad', 'Please check your email formatting.');
         isvalid = false;
       } else if (type === "tel" && !phoneRegex.test(value)) {
+        updateFieldUI(fieldName, 'warning', 'fmd_bad', 'Invalid phone number format.');
+        isvalid = false;
+      } else if ((type === 'text' || $input.is('textarea')) && value.length < 3) {
+        updateFieldUI(fieldName, 'warning', 'fmd_bad', 'Min 3 characters.');
         isvalid = false;
       }
     }
 
-    if (isvalid && value !== "") {
-      $input.removeClass("contact__input--invalid").addClass("contact__input--valid");
-    } else if (!isvalid) {
-      $input.addClass("contact__input--invalid").removeClass("contact__input--valid");
-    } else {
-      $input.removeClass("contact__input--valid").removeClass("contact__input--invalid");
+    // Clear states if an optional field is completely cleared out manually
+    if (isvalid && value === "" && !isRequired) {
+      updateFieldUI(fieldName, 'clear', '', '');
+    } else if (isvalid) {
+      updateFieldUI(fieldName, 'success', 'done_outline', '');
     }
 
     return isvalid;
-  };
+  }
 
   // Validates Contact Form Inputs on Blur
   // --------------------------------------------------------
@@ -106,48 +161,74 @@ $(window).ready(function() {
     validateInput($(this));
   });
 
-  // Handles the Contact Form Notification Element State
-  // --------------------------------------------------------
-  function showNotification(type, message) {
-  const $n = $(".contact__notification");
-
-  $n.removeClass("contact__notification--success contact__notification--error contact__notification")
-    .addClass(`contact__notification--${type}`)
-    .find("p")
-    .text(message);
-  }
-
-
   // Handle Contact Form submission
   // --------------------------------------------------------
   $(".contact__form").on("submit", function(e) {
+    e.preventDefault();
     let formIsValid = true;
+
     // loop through each input element and check validity
-    $(this).find(".contact-form__input").each(function() {
+    $(this).find(".contact__input").each(function() {
       if(!validateInput($(this))) {
         formIsValid = false;
-        $(".contact-form__input--invalid").first().focus();
+        $(".contact__input--invalid").first().focus();
       }
-    })
-    e.preventDefault();
+    });
+
+    if (!formIsValid) {
+      return;
+    }
+
     const formData = new FormData(this);
-    console.log("formData: ", [...formData.entries()]);
 
     fetch('/process', {
       method: 'POST',
       body: formData
-    }).then(response => {
-      if(!response) {
-        return response.json().then(err => { throw err; });
+    })
+    .then(response => {
+      if(response.status >= 500) {
+        throw new Error(`Server error! status: ${response.status}`);
       }
-      return response.json();
-    }).then(data => {
-      console.log(data['status']);
-      if (data['status'] === 'success') {
-        showNotification(data['status'], data['message']);
+      // Useful for makformed JSON response from server => could be response.json() assuming no bugs.
+      return response.text();
+    })
+    .then(text => {
+      // malformed json try/catch
+      try {
+        const data = JSON.parse(text)
+
+        if (data.status === 'error') {
+          Object.keys(data.fields).forEach(fieldName => {
+            const fieldData = data.fields[fieldName];
+            // Feed the single UI agent the data directly using clean associative keys
+            updateFieldUI(fieldName, fieldData.status, fieldData.icon, fieldData.msg);
+          });
+          
+          $(".contact__input--invalid").first().focus();
+        } else if (data.status === 'success') {
+          // Form submission fully valid, update all items visually to success ticks
+          $(".contact__input").each(function() {
+            const name = $(this).attr("name");
+            updateFieldUI(name, 'success', 'done_outline', '');
+          });
+          
+          document.querySelector('.contact__form').reset();
+
+          $('.contact__success-msg p').text(data.message);
+          $('.contact__success-msg p').visible();
+          setTimeout(() => {
+            $('.contact__success-msg p').invisible();
+            $('.contact__success-msg p').text('');
+          }, 5000);
+          // ! you still need to reset all the validation UI 
+        }
+      } catch (err) {
+        console.error("Server Returned non-JSON text:", text);
+        console.error(err);
       }
     }).catch(err => {
-      console.log(err.message);
+      // catching network/http/promise-chain errors
+      console.log("Fetch/Network Error:", err.message);
     })
   })
 });
