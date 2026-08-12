@@ -22,32 +22,32 @@
   <section id="projects" class="project-cards">
     <div class="container">
       <div class="project-cards__container">
-        <a class="project-cards__link" href="#">
+        <a class="project-cards__link" href="https://netmatters.david-mackie.netmatters-scs.co.uk/" target="_blank">
           <div class="project-cards__card project-cards__card--1"></div>
           <h4 class="project-cards__title">Netmatters Mirror site</h4>
           <div class="project-cards__button">View Project</div>
         </a>
-        <a class="project-cards__link" href="#">
+        <a class="project-cards__link" href="https://js-array.david-mackie.netmatters-scs.co.uk/" target="_blank">
           <div class="project-cards__card project-cards__card--2"></div>
-          <h4 class="project-cards__title">Title of Project</h4>
+          <h4 class="project-cards__title">JS Array</h4>
           <div class="project-cards__button">View Project</div>
         </a>
-        <a class="project-cards__link" href="#">
+        <a class="project-cards__link" href="https://laravel.david-mackie.netmatters-scs.co.uk/" target="_blank">
           <div class="project-cards__card project-cards__card--3"></div>
-          <h4 class="project-cards__title">Title of Project</h4>
+          <h4 class="project-cards__title">Admin Panel</h4>
           <div class="project-cards__button">View Project</div>
         </a>
-        <a class="project-cards__link" href="#">
+        <a class="project-cards__link" href="#" target="_blank">
           <div class="project-cards__card project-cards__card--4"></div>
           <h4 class="project-cards__title">Title of Project</h4>
           <div class="project-cards__button">View Project</div>
         </a>
-        <a class="project-cards__link" href="#">
+        <a class="project-cards__link" href="#" target="_blank">
           <div class="project-cards__card project-cards__card--5"></div>
           <h4 class="project-cards__title">Title of Project</h4>
           <div class="project-cards__button">View Project</div>
         </a>
-        <a class="project-cards__link" href="#">
+        <a class="project-cards__link" href="#" target="_blank">
           <div class="project-cards__card project-cards__card--6"></div>
           <h4 class="project-cards__title">Title of Project</h4>
           <div class="project-cards__button">View Project</div>
