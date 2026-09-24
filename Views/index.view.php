@@ -37,9 +37,9 @@
           <h4 class="project-cards__title">Admin Panel</h4>
           <div class="project-cards__button">View Project</div>
         </a>
-        <a class="project-cards__link" href="#" target="_blank">
+        <a class="project-cards__link" href="http://react.david-mackie.netmatters-scs.co.uk/" target="_blank">
           <div class="project-cards__card project-cards__card--4"></div>
-          <h4 class="project-cards__title">Title of Project</h4>
+          <h4 class="project-cards__title">React Project</h4>
           <div class="project-cards__button">View Project</div>
         </a>
         <a class="project-cards__link" href="#" target="_blank">
